@@ -1,0 +1,9 @@
+package com.animals.DAO;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data @NoArgsConstructor
+public class Usuario {
+
+}

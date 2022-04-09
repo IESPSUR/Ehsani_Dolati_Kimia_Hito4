@@ -1,0 +1,17 @@
+package com.animals.DAO;
+
+import javax.transaction.Transactional;
+
+import org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean;
+import org.springframework.data.repository.Repository;
+
+import com.animals.models.UsuarioModel;
+
+@Repository
+@Transactional
+public class UsuarioDAO {
+
+
+	
+
+}

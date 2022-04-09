@@ -1,0 +1,48 @@
+package com.animals.DAO;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Repository;
+
+import com.animals.models.UsuarioModel;
+
+@Repository
+@Transactional
+public class UsuarioDAO {
+
+	 @PersistenceContext
+	 private EntityManager entityManager ;
+
+	   public void create(UsuarioModel user) {
+	        entityManager.persist(user);
+	        return;
+	    }
+	
+	   
+	    @SuppressWarnings("unchecked")
+		public List<UsuarioModel> getAll() {
+	        return entityManager.createQuery("select u from usuarios u").getResultList();
+	    }
+	   
+	   public UsuarioModel getByNombreUsuario(String nombreUsuario) {
+	        return entityManager.find(UsuarioModel.class, nombreUsuario);
+	    }
+	   
+	   public void update(UsuarioModel user) {
+	        entityManager.merge(user);
+	        return;
+	    }
+
+	    public void delete(UsuarioModel user) {
+	        if (entityManager.contains(user))
+	            entityManager.remove(user);
+	        else
+	            entityManager.remove(entityManager.merge(user));
+	        return;
+	    }
+}

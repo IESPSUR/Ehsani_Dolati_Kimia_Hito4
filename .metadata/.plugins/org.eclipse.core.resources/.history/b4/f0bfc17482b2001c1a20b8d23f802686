@@ -1,0 +1,12 @@
+package com.animals.controllers;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@RestController
+public class Usuario {
+	
+
+	
+	
+}

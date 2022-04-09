@@ -1,0 +1,42 @@
+package com.animals.models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+
+@Entity
+@Table(name= "usuarios")
+@SQLDelete(sql = "UPDATE usuarios SET deleted=true WHERE nombreUsuario = ?")
+@Where(clause = "deleted = false")
+public class UsuarioModel {
+
+	@Column
+	private String DNI;
+	
+	@Id
+	private String nombreUsuario;
+	@Column(name= "contraseña")
+	private String contrasenia;
+	@Column
+	private String nombre;
+	@Column
+	private String apellido;
+	@Column
+	private String correo;
+	@Column
+	private String fechaNacimiento;
+	@Column
+	private String foto;
+	@Column
+	private String tipo;
+	@Column
+	private String deleted;
+
+
+
+
+}

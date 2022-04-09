@@ -1,0 +1,19 @@
+package com.animals.controllers;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.animals.DAO.Usuario;
+
+
+@RestController
+public class UsuarioController {
+	
+	@GetMapping("/listarUsuarios/{id}")
+	public List<Usuario> listarUsuarios(@RequestParam(value="id", defaultValue(0)) int id){
+		
+	}
+	
+}

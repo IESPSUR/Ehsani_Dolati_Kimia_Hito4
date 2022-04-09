@@ -1,0 +1,26 @@
+package com.animals.models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name= "usuarios")
+public class Usuario {
+
+	private String DNI;
+	private String nombreUsuario;
+	@Column(name= "contraseña")
+	private String contrasenia;
+	private String nombre;
+	private String apellido;
+	private String correo;
+	private String fechaNacimiento;
+	private String foto;
+	private String tipo;
+	private String deleted;
+
+
+
+
+}
