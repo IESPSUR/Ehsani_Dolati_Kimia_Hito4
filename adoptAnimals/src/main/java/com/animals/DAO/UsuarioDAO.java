@@ -1,14 +1,10 @@
 package com.animals.DAO;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
-
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Repository;
-
 import com.animals.models.UsuarioModel;
 
 @Repository

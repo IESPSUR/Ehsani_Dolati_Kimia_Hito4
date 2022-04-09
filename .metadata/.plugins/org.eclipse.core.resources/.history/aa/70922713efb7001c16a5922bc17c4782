@@ -1,0 +1,38 @@
+package com.animals.models;
+
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Table(name= "publicaciones")
+@Data
+@Entity(name="publicaciones")
+public class PublicacionModel {
+	
+	@Id
+	private int id;
+	@Column
+	private String cabecera;
+	@Column
+	private String foto;
+	@Column
+	private String contenido;
+	@Column
+	private String tipo;
+	@Column
+	private String nombreUsuario;
+	
+
+
+
+}

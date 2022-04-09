@@ -19,7 +19,13 @@ import lombok.NoArgsConstructor;
 @Where(clause = "deleted = false")
 @Data
 @Entity(name="usuarios")
+@NoArgsConstructor
+@AllArgsConstructor
 public class UsuarioModel {
+	
+	public UsuarioModel(String nombreUsuario) {
+		this.nombreUsuario= nombreUsuario;
+	}
 	
 	@Id
 	private String nombreUsuario;
