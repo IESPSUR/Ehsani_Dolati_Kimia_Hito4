@@ -1,0 +1,23 @@
+package com.animals.models;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+import lombok.Data;
+
+@Table(name= "seguimiento")
+@Data
+@Entity(name="seguimiento")
+public class Seguimiento {
+	
+	@Id
+	private String nombreUsuario;
+	@Id
+	private String nombreUsuario2;
+	@Id
+	private String fecha;
+
+
+}

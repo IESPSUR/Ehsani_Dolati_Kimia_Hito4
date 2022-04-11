@@ -1,0 +1,49 @@
+package com.animals.DAO;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
+import com.animals.models.SeguimientoModel;
+
+@Repository
+@Transactional
+public class SeguimientoDAO {
+
+	 @PersistenceContext
+	 private EntityManager entityManager ;
+
+	   public void create(SeguimientoModel follow) {
+	         entityManager.persist(follow);
+	    }
+	
+	   
+	    @SuppressWarnings("unchecked")
+		public List<SeguimientoModel> getAll() {
+	    	return (List<SeguimientoModel>) entityManager.createQuery(" from seguimiento").getResultList();
+	    }
+	   
+	    @SuppressWarnings("unchecked")
+		public List<SeguimientoModel> getFollowings(String nombreUsuario1 ) {
+	        return entityManager.createQuery(" from seguimiento where nombreUsuario1 = ? ").getResultList();
+	    }
+	   
+	   	public List<SeguimientoModel> getFollowers(String nombreUsuario2 ) {
+	        return entityManager.find(SeguimientoModel.class, nombreUsuario2);
+	    }
+	   	
+	    public SeguimientoModel getFollow(String nombreUsuario , String nombreUsuario2 ) {
+	        return entityManager.find(SeguimientoModel.class, nombreUsuario );
+	    }
+
+	    public void delete(SeguimientoModel follow) {
+	        if (entityManager.contains(follow))
+	            entityManager.remove(follow);
+	        else
+	            entityManager.remove(entityManager.merge(follow));
+	    }
+}

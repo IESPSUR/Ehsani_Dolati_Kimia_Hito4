@@ -1,0 +1,43 @@
+package com.animals.DAO;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
+import com.animals.models.SolicitudAnimalModel;
+
+@Repository
+@Transactional
+public class SolicitudAnimalDAO {
+
+	 @PersistenceContext
+	 private EntityManager entityManager ;
+
+	   	public void create(SolicitudAnimalModel request) {
+	         entityManager.persist(request);
+	    }
+	
+	   
+	    @SuppressWarnings("unchecked")
+		public List<SolicitudAnimalModel> getAll() {
+	    	return (List<SolicitudAnimalModel>) entityManager.createQuery(" from solicitudAnimal").getResultList();
+	    }
+	   
+	    @SuppressWarnings("unchecked")
+		public List<SolicitudAnimalModel> getSolicitudesDeUnUsuario() {
+	    	return (List<SolicitudAnimalModel>) entityManager.createQuery("select s.nombreUsuario , animales.nombre  from solicitudAnimal s, animales where s.animalesDNI = animales.DNI and animales.DNI in (\n"
+	    			+ "select a.DNI from usuarios u , publicaciones p , animales a where u.nombreUsuario = p.nombreUsuario and p.id = a.publicaciones_id and u.nombreUsuario= 'shayman9'\n"
+	    			+ ")").getResultList();
+	    }
+
+	    public void delete(SolicitudAnimalModel request) {
+	        if (entityManager.contains(request))
+	            entityManager.remove(request);
+	        else
+	            entityManager.remove(entityManager.merge(request));
+	    }
+}

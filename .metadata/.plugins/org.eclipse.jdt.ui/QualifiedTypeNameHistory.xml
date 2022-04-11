@@ -11,7 +11,6 @@
     <fullyQualifiedTypeName name="org.springframework.data.repository.Repository"/>
     <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
     <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="org.springframework.data.crossstore.ChangeSetPersister.NotFoundException"/>
@@ -19,7 +18,17 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
     <fullyQualifiedTypeName name="com.animals.DAO.UsuarioDAO"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
-    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.ForeignKey"/>
+    <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+    <fullyQualifiedTypeName name="javax.persistence.ForeignKey"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="com.animals.models.PublicacionModel"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="com.animals.models.UsuarioModel"/>
+    <fullyQualifiedTypeName name="com.animals.models.AnimalModel"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+    <fullyQualifiedTypeName name="com.animals.DAO.SolicitudAnimalDAO"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
 </qualifiedTypeNameHistroy>

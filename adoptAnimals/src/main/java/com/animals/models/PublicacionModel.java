@@ -8,12 +8,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Table(name= "publicaciones")
 @Data
 @Entity(name="publicaciones")
+@NoArgsConstructor
+@AllArgsConstructor
 public class PublicacionModel {
+	
+	public PublicacionModel(int id) {
+		this.id= id;
+	}
 	
 	@Id
 	private int id;

@@ -20,8 +20,8 @@ public class ComentarioModel {
 	@Column
 	private String cabecera;
 	@ManyToOne
-    @JoinColumn(name = "publicacion_id",foreignKey = @ForeignKey(name="PUBLICACION_ID_FK"))
-	private PublicacionModel publicacion_id;
+    @JoinColumn(name = "publicaciones_id",foreignKey = @ForeignKey(name="PUBLICACION_ID_FK"))
+	private PublicacionModel publicaciones_id;
 	@ManyToOne
     @JoinColumn(name = "nombreUsuario",foreignKey = @ForeignKey(name="USUARIO_ID_FK"))
 	private UsuarioModel nombreUsuario;
