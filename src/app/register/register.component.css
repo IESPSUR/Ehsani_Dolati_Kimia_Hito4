@@ -1,0 +1,9 @@
+.container{
+    background-color: rgba(44, 117, 101, 0.884)!important;
+    border-radius: 17px;
+    font-size: 19px;
+    width: 60%;
+    margin-top: 80px;
+    color: aliceblue;
+    padding: 70px 100px 70px 100px !important;
+}

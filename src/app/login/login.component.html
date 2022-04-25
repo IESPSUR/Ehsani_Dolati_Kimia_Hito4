@@ -1,0 +1,21 @@
+<h2 class="my-5 text-center">{{title}}</h2>
+<div class="container">
+
+  <form (ngSubmit)="entrar()" [formGroup]="loginForm" target="_top" class="d-flex justify-content-center row g-3 text-center">
+    <div class=" position-relative row my-3">
+      <label for="nombreUsuario" class="form-label">Username</label>
+      <input formControlName="nombreUsuario" type="text" class="form-control">
+      <span class="text-danger" *ngIf="loginForm.get('nombreUsuario')?.touched && loginForm.get('nombreUsuario')?.hasError('required')">This
+        input is required</span>
+    </div>
+    <div class=" position-relative row my-3">
+      <label for="contrasenia" class="form-label">Password</label>
+      <input formControlName="contrasenia" type="password" class="form-control">
+      <span class="text-danger"
+        *ngIf="loginForm.get('contrasenia')?.touched && loginForm.get('contrasenia')?.hasError('required')">This input is
+        required</span>
+    </div>
+    
+   <div class="row"> <button class="col btn btn-light"   [disabled]="loginForm.invalid">Enter</button><div class="col " style="font-size: 15px;"> <a href="/register/">Don't have <br>an account?</a></div></div>
+    </form>
+</div>

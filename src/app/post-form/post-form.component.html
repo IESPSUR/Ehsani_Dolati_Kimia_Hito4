@@ -1,0 +1,86 @@
+<div class="container">
+    <h2 class="py-5 text-center">{{title}}</h2>
+
+    <form enctype="multipart/form-data" (ngSubmit)="crearEditar()" [formGroup]="postForm" target="_top" class="row g-3">
+        <div class=" position-relative">
+            <label for="cabecera" class="form-label">Title</label>
+            <input formControlName="cabecera" type="text" class="form-control">
+            <span class="text-danger"
+                *ngIf="postForm.get('cabecera')?.touched && postForm.get('cabecera')?.hasError('required')">This
+                input is required</span>
+        </div>
+        <div class=" position-relative">
+            <label for="contenido" class="form-label">Context</label>
+            <textarea formControlName="contenido" type="text" class="form-control"></textarea>
+            <span class="text-danger"
+                *ngIf="postForm.get('contenido')?.touched && postForm.get('contenido')?.hasError('required')">This
+                input is
+                required</span>
+
+        </div>
+        <div class=" position-relative">
+            <label for="tipo" class="form-label">Select the reason of this post</label>
+            <select id="tipo" ([ngModel])="selectedType" (change)="cargarComponentes()" formControlName="tipo"
+                type="text" class="form-control">
+                <option id="animal" value="animal"> For Adoption</option>
+                <option id="noticia" value="noticia"> News</option>
+            </select>
+            <span class="text-danger"
+                *ngIf="postForm.get('tipo')?.touched && postForm.get('tipo')?.hasError('required')">This
+                input is required</span>
+        </div>
+
+
+        <div class="col-md-6 position-relative">
+            <label for="foto" class="form-label">Upload an image</label>
+            <input formControlName="foto" (change)="_imageService.onImageUpload($event)" type="file"
+                class="form-control">
+        </div>
+
+        <div *ngIf="selectedType=='animal'">
+            <div class=" position-relative">
+                <label for="dni" class="form-label">animals DNI</label>
+                <input formControlName="dni" type="text" class="form-control">
+                <span class="text-danger"
+                    *ngIf="postForm.get('dni')?.touched && postForm.get('dni')?.hasError('required')">This
+                    input is required</span>
+            </div>
+            <div class=" position-relative">
+                <label for="nombre" class="form-label">Animals Name</label>
+                <input formControlName="nombre" type="text" class="form-control">
+                <span class="text-danger"
+                    *ngIf="postForm.get('nombre')?.touched && postForm.get('nombre')?.hasError('required')">This
+                    input is required</span>
+            </div>
+            <div class=" position-relative">
+                <label for="fechaNacimiento" class="form-label">Birth Date</label>
+                <input formControlName="fechaNacimiento" type="date" class="form-control">
+                <span class="text-danger"
+                    *ngIf="postForm.get('fechaNacimiento')?.touched && postForm.get('fechaNacimiento')?.hasError('required')">This
+                    input is required</span>
+            </div>
+            <div class=" position-relative">
+                <label for="raza" class="form-label">Race</label>
+                <input formControlName="raza" type="text" class="form-control">
+                <span class="text-danger"
+                    *ngIf="postForm.get('raza')?.touched && postForm.get('raza')?.hasError('required')">This
+                    input is required</span>
+            </div>
+            <div class=" position-relative">
+                <label for="sexo" class="form-label">Sex</label>
+                <input formControlName="sexo" type="text" class="form-control">
+                <span class="text-danger"
+                    *ngIf="postForm.get('sexo')?.touched && postForm.get('sexo')?.hasError('required')">This
+                    input is required</span>
+            </div>
+            <div class=" position-relative">
+                <label for="ubicacion" class="form-label">Location</label>
+                <input formControlName="ubicacion" type="text" class="form-control">
+                <span class="text-danger"
+                    *ngIf="postForm.get('ubicacion')?.touched && postForm.get('ubicacion')?.hasError('required')">This
+                    input is required</span>
+            </div>
+        </div>
+        <button class="btn btn-primary" [disabled]="postForm.invalid">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,17 @@
+
+a{
+    color: black !important;
+}
+
+.container{
+    width: 55%!important;
+}
+
+.containerPost{
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.border{
+    margin-bottom: 80px;
+}

@@ -1,0 +1,43 @@
+<div class="container px-5  ">
+    <h2 class="py-5 text-center">{{title}}</h2>
+<p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of hours to help you.</p>
+    <form enctype="multipart/form-data" (ngSubmit)="enviar()" [formGroup]="contactForm" target="_top" class=" g-3">
+        <div class=" position-relative my-3 ">
+            <label for="nombre" class="form-label">Name</label>
+            <input formControlName="nombre" type="text" class="form-control">
+            <span class="text-danger"
+                *ngIf="contactForm.get('nombre')?.touched && contactForm.get('nombre')?.hasError('required')">This
+                input is required</span>
+        </div>
+        <div class="position-relative my-3 ">
+            <label for="correo" class="form-label">Email</label>
+            <input formControlName="correo" type="text" class="form-control">
+            <span class="text-danger"
+                *ngIf="contactForm.get('correo')?.touched && contactForm.get('correo')?.hasError('required') ">This
+                input is required</span>
+            <span class="text-danger" *ngIf="contactForm.get('correo')?.hasError('pattern') ">This input should be an
+                email
+                format</span>
+
+        </div>
+        <div class=" position-relative my-3">
+            <label for="titulo" class="form-label">Subject</label>
+            <input formControlName="titulo" type="text" class="form-control">
+            <span class="text-danger"
+                *ngIf="contactForm.get('titulo')?.touched && contactForm.get('titulo')?.hasError('required')">This
+                input is required</span>
+        </div>
+
+        <div class="col-md-6 position-relative my-3">
+            <label for="mensaje" class="form-label">Message</label>
+            <textarea formControlName="mensaje" type="text" class="form-control"></textarea>
+            <span class="text-danger"
+                *ngIf="contactForm.get('mensaje')?.touched && contactForm.get('mensaje')?.hasError('required') ">This
+                input is
+                required</span>
+        </div>
+
+
+        <button class="btn btn-primary my-4" [disabled]="contactForm.invalid">Submit</button>
+    </form>
+</div>

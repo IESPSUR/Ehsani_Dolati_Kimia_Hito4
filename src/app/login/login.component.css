@@ -1,0 +1,15 @@
+.container{
+    background-color: rgba(44, 117, 101, 0.884)!important;
+    border-radius: 17px;
+    font-size: 19px;
+    width: 20%!important;
+    margin-top: 80px;
+    color: aliceblue;
+    padding: 70px 50px 70px 50px !important;
+    font-weight: 500;
+}
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+}

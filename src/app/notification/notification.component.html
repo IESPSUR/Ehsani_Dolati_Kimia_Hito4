@@ -1,0 +1,28 @@
+<div class="container px-5 ">
+    <h2 class="text-center py-4">Notifications</h2>
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" [(ngModel)]="opcionSeleccionado" (ngModelChange)="obtenerLista()">
+        <option selected>Select the type</option>
+        <option value="1">Follows</option>
+        <option value="2">Adoption Requests</option>
+      </select>
+    <div class="py-5 px-5" *ngFor="let notification of notifications">
+        <div *ngIf="!notifications">There is no notificationes yet</div>
+        <div class="row" *ngIf="opcionSeleccionado==1">
+            <div class="col-2"><img class="rounded-circle mx-3"
+                src="../../assets/profile.jpeg" width="60px"
+                height="60px"></div>
+            <div class="col-7 d-flex align-items-center">{{notification.nombreUsuario1.nombreUsuario}} has followed you </div>
+            <div class="col-3 d-flex align-items-center"><button class="btn btn-success" (click)="follow(notification.nombreUsuario1.nombreUsuario)">Follow Back</button></div>
+        </div>
+
+        <div class="row" *ngIf="opcionSeleccionado==2">
+            <div class="col-2"><img class="rounded-circle mx-3"
+                src="../../assets/profile.jpeg" width="60px"
+                height="60px"></div>
+            <div class="col-7 d-flex align-items-center">{{notification.nombreUsuario.nombreUsuario}} has applied for your animal with DNI <a (click)="getAnimalSolicitado(notification.animalesDNI.dni)"> {{notification.animalesDNI.dni}}</a></div>
+            <div class="col-3 d-flex align-items-center"><button class="btn btn-success" (click)="responderSolicitud('yes',notification.animalesDNI.dni,notification.nombreUsuario.nombreUsuario,notification.fecha)">Yes</button>
+                                <button class="btn btn-danger" (click)="responderSolicitud('no',notification.animalesDNI.dni,notification.nombreUsuario.nombreUsuario,notification.fecha)">No</button></div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,14 @@
+.navbar{
+    background-color: rgb(32, 36, 32) !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+body{
+    background: linear-gradient(rgba(255, 255, 255, 0.151), rgba(255, 255, 255, 0.253)), url('../assets/GatoFondo3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 788px
+}
+

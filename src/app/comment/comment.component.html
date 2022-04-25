@@ -1,0 +1,42 @@
+<div class="containerComponentes container  py-5">
+
+  <div class="row py-3">
+    <div class="col-2"><img class="rounded-circle mx-3" src="../../assets/profile.jpeg" width="80px" height="80px">
+    </div>
+    <div class="col-10 d-flex align-items-center">
+      <h5>{{post.nombreUsuario.nombreUsuario}}</h5>
+    </div>
+  </div>
+
+  <div>
+    <div class="row my-2">
+      <h5>{{post.cabecera}}</h5>
+      <p>{{post.contenido}}</p>
+    </div>
+    <div class="row"></div>
+  </div>
+
+
+  <div *ngIf="_authService.isAuth()" class="col-9 d-flex justify-content-center my-2"><img class="rounded-circle mx-3" [src]=imagenUsu width="50px"
+      height="50px">
+    <form (ngSubmit)="enviar(post.id)" [formGroup]="commentForm" class="mx-0 my-2 d-flex justify-content-center"><input
+        formControlName="comment" type="text" class="form-control w-50"><button class="mx-2 btn btn-primary"
+        [disabled]="commentForm.invalid">Submit</button></form>
+  </div>
+
+
+  <div class="my-5">
+  <div class="my-4" style="padding-left: 30px;" *ngFor="let comment of comments">
+    <div class="row">
+      <div class="col-2"><a href="/users/{{comment.nombreUsuario.nombreUsuario}}"><img class="rounded-circle mx-3" src="../../assets/profile2.avif" width="50px"
+        height="50px"></a></div>
+      <div class="col-4"><b>{{comment.nombreUsuario.nombreUsuario}}</b><br>{{comment.cabecera}}</div>
+      <div class="col-6"><button *ngIf="esMiComentario(comment.nombreUsuario.nombreUsuario) || _authService.isAdmin()"
+          class="btn btn-danger" (click)="borrarComentario(comment.id)">Delete</button></div>
+    </div>
+  </div>
+  </div>
+
+
+
+</div>

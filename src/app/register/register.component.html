@@ -1,0 +1,73 @@
+<h2 class="my-5 text-center">{{title}}</h2>
+<div class="container">
+
+    <form enctype="multipart/form-data" (ngSubmit)="crearEditar()" [formGroup]="registerForm" target="_top" class="row g-3">
+        <div class="col-md-4 position-relative">
+            <label for="nombreUsuario" class="form-label">Username</label>
+            <input formControlName="nombreUsuario" [attr.disabled]="nombreUsuario ? 'disabled' : null" type="text" class="form-control" >
+            <span class="text-danger"
+                *ngIf="registerForm.get('nombreUsuario')?.touched && registerForm.get('nombreUsuario')?.hasError('required')">This
+                input is required</span>
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="contrasenia" class="form-label">Password</label>
+            <input formControlName="contrasenia" type="password" class="form-control">
+            <span class="text-danger"
+                *ngIf="registerForm.get('contrasenia')?.touched && registerForm.get('contrasenia')?.hasError('required')">This
+                input is
+                required</span>
+
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="dni" class="form-label">DNI</label>
+            <input formControlName="dni" type="text" class="form-control">
+            <span class="text-danger"
+                *ngIf="registerForm.get('dni')?.touched && registerForm.get('dni')?.hasError('required')">This
+                input is required</span>
+        </div>
+
+        <div class="col-md-6 position-relative">
+            <label for="nombre" class="form-label">First Name</label>
+            <input formControlName="nombre" type="text" class="form-control">
+            <span class="text-danger"
+                *ngIf="registerForm.get('nombre')?.touched && registerForm.get('nombre')?.hasError('required') ">This
+                input is
+                required</span>
+        </div>
+
+        <div class="col-md-6 position-relative">
+            <label for="apellido" class="form-label">Last Name</label>
+            <textarea formControlName="apellido" class="form-control"></textarea>
+            <span class="text-danger"
+                *ngIf="registerForm.get('apellido')?.touched && registerForm.get('apellido')?.hasError('required') ">This
+                input is
+                required</span>
+
+        </div>
+
+        <div class="col-md-6 position-relative">
+            <label for="correo" class="form-label">Email</label>
+            <input formControlName="correo" type="text" class="form-control">
+            <span class="text-danger"
+                *ngIf="registerForm.get('correo')?.touched && registerForm.get('correo')?.hasError('required') ">This
+                input is required</span>
+            <span class="text-danger" *ngIf="registerForm.get('correo')?.hasError('pattern') ">This input should be an
+                email
+                format</span>
+        </div>
+        <div class="col-md-6 position-relative">
+            <label for="fechaNacimiento" class="form-label">Birth Date</label>
+            <input formControlName="fechaNacimiento" type="date" class="form-control">
+            <span class="text-danger"
+                *ngIf="registerForm.get('fechaNacimiento')?.touched && registerForm.get('fechaNacimiento')?.hasError('required') ">This
+                input is
+                required</span>
+        </div>
+        <div class="col-md-6 position-relative">
+            <label for="file" class="form-label">Profile Image</label>
+            <input formControlName="file" (change)="_imageService.onImageUpload($event)" type="file" class="form-control">
+        </div>
+
+        <button class="btn btn-light" [disabled]="registerForm.invalid">Submit</button>
+    </form>
+</div>
