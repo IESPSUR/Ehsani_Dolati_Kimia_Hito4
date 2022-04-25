@@ -32,6 +32,15 @@ public class ComentarioController {
 		}
 		return commentDao.getById(id);
 	}
+	
+	@GetMapping("/listarComentariosPorPublicacion/{id}")
+	@ResponseBody
+	public List<ComentarioModel> listarComentariosPorPublicacion(@PathVariable int id) throws NotFoundException {
+		if (id==0) {
+			throw new NotFoundException();
+		}
+		return commentDao.getByIdPublicacion(id);
+	}
 
 	@DeleteMapping("/borrarComentario/{id}")
 	@ResponseBody
@@ -45,8 +54,8 @@ public class ComentarioController {
 	
 	@PostMapping("/crearComentario")
 	@ResponseBody
-	public void crearComentario(@RequestBody ComentarioModel comment) {
-		commentDao.create(comment);
+	public ComentarioModel crearComentario(@RequestBody ComentarioModel comment) {
+		return commentDao.create(comment);
 	}
 
 }

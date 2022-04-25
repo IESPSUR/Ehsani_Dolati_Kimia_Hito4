@@ -33,7 +33,22 @@ public class PublicacionController {
 		}
 		return postDao.getById(id);
 	}
+	
+	@GetMapping("/listarPublicacionesUsuario/{nombreUsuario}")
+	@ResponseBody
+	public List<PublicacionModel>  listarPublicacionesUsuario(@PathVariable String nombreUsuario) throws NotFoundException {
+		if (nombreUsuario=="") {
+			throw new NotFoundException();
+		}
+		return postDao.getUserPosts(nombreUsuario);
+	}
 
+	@GetMapping("/listarAdminPosts/")
+	@ResponseBody
+	public List<PublicacionModel> getAdminPosts() throws NotFoundException {
+		return postDao.getAdminPosts();
+	}
+	
 	@DeleteMapping("/borrarPublicacion/{id}")
 	@ResponseBody
 	public void borrarPublicacion(@PathVariable int id) throws NotFoundException {
@@ -54,5 +69,24 @@ public class PublicacionController {
 	public void crearPublicacion(@RequestBody PublicacionModel post) {
 		postDao.create(post);
 	}
+	
+	@GetMapping("/listarPostsFollowings/{nombreUsuario}")
+	@ResponseBody
+	public List<PublicacionModel> getPostsFollowings(@PathVariable String nombreUsuario) throws NotFoundException {
+		if (nombreUsuario=="") {
+			throw new NotFoundException();
+		}
+		return postDao.getPostsFotosFollowings(nombreUsuario);
+	}
+	
+	@GetMapping("/getAnimalInfo/{DNI}")
+	@ResponseBody
+	public PublicacionModel getAnimalInfo(@PathVariable String DNI) throws NotFoundException {
+		if (DNI=="") {
+			throw new NotFoundException();
+		}
+		return postDao.getAnimalInfo(DNI);
+	}
+	
 
 }

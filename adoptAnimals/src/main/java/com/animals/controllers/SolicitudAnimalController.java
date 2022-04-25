@@ -49,7 +49,19 @@ public class SolicitudAnimalController {
 	@PostMapping("/crearSolicitud")
 	@ResponseBody
 	public void crearSolicitud(@RequestBody SolicitudAnimalModel requestAnimal) {
+		requestAnimal.setDeleted("0");
+		requestAnimal.setEstado("pendiente");
 		requestDao.create(requestAnimal);
 	}
+	
+	@PutMapping("/responderSolicitud/{respuesta}")
+	@ResponseBody
+	public void responderSolicitud(@PathVariable String respuesta , @RequestBody SolicitudAnimalModel solicitud ) throws NotFoundException {
+		if (respuesta == "" ) {
+			throw new NotFoundException();
+		}
+		requestDao.responderSolicitud(respuesta, solicitud);
+	}
+	
 
 }

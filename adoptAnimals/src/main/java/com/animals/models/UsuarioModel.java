@@ -27,6 +27,11 @@ public class UsuarioModel {
 		this.nombreUsuario= nombreUsuario;
 	}
 	
+	public UsuarioModel(String nombreUsuario, String contrasenia ) {
+		this.nombreUsuario= nombreUsuario;
+		this.contrasenia= contrasenia;
+	}
+	
 	@Id
 	private String nombreUsuario;
 	@Column(name= "DNI")
@@ -57,9 +62,8 @@ public class UsuarioModel {
 		this.nombre=newUser.nombre;
 		this.correo=newUser.correo;
 		this.fechaNacimiento=newUser.fechaNacimiento;
-		this.foto=newUser.foto;
-		this.tipo=newUser.tipo;
-		this.deleted=newUser.deleted;
+		this.tipo="usuario";
+		this.deleted="0";
 		return this;
 
 		

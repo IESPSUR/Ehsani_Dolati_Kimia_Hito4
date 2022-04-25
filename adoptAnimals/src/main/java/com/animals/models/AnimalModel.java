@@ -26,12 +26,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AnimalModel {
 	
-	public AnimalModel(String dni) {
-		this.dni= dni;
+	public AnimalModel(String DNI) {
+		this.DNI= DNI;
 	}
 	@Id
 	@Column(name = "DNI")
-	private String dni;
+	private String DNI;
 	@Column
 	private Date fechaNacimiento;
 	@Column
@@ -50,6 +50,9 @@ public class AnimalModel {
 	@Column
 	private String deleted;
 
+	public String getDNI() {
+		return this.DNI;
+	}
 	
 
 

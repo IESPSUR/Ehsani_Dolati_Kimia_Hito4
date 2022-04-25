@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
+import com.animals.models.PublicacionModel;
 import com.animals.models.UsuarioModel;
 
 @Repository
@@ -14,8 +15,9 @@ public class UsuarioDAO {
 	 @PersistenceContext
 	 private EntityManager entityManager ;
 
-	   public void create(UsuarioModel user) {
+	   public UsuarioModel create(UsuarioModel user) {
 	         entityManager.persist(user);
+	         return user;
 	    }
 	
 	   
@@ -27,9 +29,10 @@ public class UsuarioDAO {
 	   public UsuarioModel getByNombreUsuario(String nombreUsuario) {
 	        return entityManager.find(UsuarioModel.class, nombreUsuario);
 	    }
+	  
 	   
-	   public void update(UsuarioModel user) {
-	        entityManager.merge(user);
+	   public UsuarioModel update(UsuarioModel user) {
+	        return entityManager.merge(user);
 	    }
 
 	    public void delete(UsuarioModel user) {
@@ -38,4 +41,11 @@ public class UsuarioDAO {
 	        else
 	            entityManager.remove(entityManager.merge(user));
 	    }
+	    
+	   /* @SuppressWarnings("unchecked")
+		public List<UsuarioModel> getFotoFollowings(String nombreUsuario) {
+			   return (List<UsuarioModel>) entityManager.createQuery(" from seguimiento s, usuarios u where s.nombreUsuario1 = u.nombreUsuario and s.nombreUsuario1="+nombreUsuario).getResultList();
+	    }*/
+	    
+	    
 }

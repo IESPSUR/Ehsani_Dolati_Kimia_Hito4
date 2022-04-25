@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import com.animals.models.ComentarioModel;
+import com.animals.models.SolicitudAnimalModel;
 
 @Repository
 @Transactional
@@ -17,8 +18,9 @@ public class ComentarioDAO {
 	 @PersistenceContext
 	 private EntityManager entityManager ;
 
-	   public void create(ComentarioModel comment) {
-	         entityManager.persist(comment);
+	   public ComentarioModel create(ComentarioModel comment) {
+	          entityManager.persist(comment);
+	          return comment;
 	    }
 	
 	   
@@ -29,6 +31,11 @@ public class ComentarioDAO {
 	   
 	   public ComentarioModel getById(int id) {
 	        return entityManager.find(ComentarioModel.class, id);
+	    }
+	   
+	   @SuppressWarnings("unchecked")
+	   public List<ComentarioModel> getByIdPublicacion(int id) {
+		   return (List<ComentarioModel>) entityManager.createQuery(" from comentarios where publicaciones_id = "+id).getResultList();
 	    }
 	   
 

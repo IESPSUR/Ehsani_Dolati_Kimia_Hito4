@@ -5,6 +5,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
+
+import com.animals.models.ComentarioModel;
 import com.animals.models.PublicacionModel;
 
 @Repository
@@ -38,4 +40,26 @@ public class PublicacionDAO {
 	        else
 	            entityManager.remove(entityManager.merge(post));
 	    }
+	    
+	    @SuppressWarnings("unchecked")
+		public List<PublicacionModel> getPostsFotosFollowings(String nombreUsuario) {
+			   return (List<PublicacionModel>) entityManager.createQuery(" from publicaciones where nombreUsuario in (select nombreUsuario2 from seguimiento where nombreUsuario1='"+nombreUsuario+"')").getResultList();
+	    }
+	    
+	    @SuppressWarnings("unchecked")
+		public List<PublicacionModel> getAdminPosts() {
+			   return (List<PublicacionModel>) entityManager.createQuery(" from publicaciones where nombreUsuario in (select nombreUsuario from usuarios where tipo='admin')").getResultList();
+	    }
+	    
+	    public PublicacionModel getAnimalInfo(String DNIAnimal) {
+			   return (PublicacionModel)  entityManager.createQuery(" from publicaciones where id = (select publicaciones_id from animales where DNI = '"+DNIAnimal+"')").getResultList().get(0);
+	    }
+
+
+		@SuppressWarnings("unchecked")
+		public List<PublicacionModel> getUserPosts(String nombreUsuario) {
+			   return (List<PublicacionModel>) entityManager.createQuery(" from publicaciones where nombreUsuario ='"+nombreUsuario+"'").getResultList();
+
+		}
+	    
 }

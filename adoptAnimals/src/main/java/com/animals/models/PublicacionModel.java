@@ -23,6 +23,7 @@ public class PublicacionModel {
 		this.id= id;
 	}
 	
+	
 	@Id
 	private int id;
 	@Column

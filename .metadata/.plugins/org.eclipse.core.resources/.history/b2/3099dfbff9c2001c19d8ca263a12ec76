@@ -1,0 +1,28 @@
+package com.animals.DAO;
+
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
+import com.animals.models.ComentarioModel;
+import com.animals.models.SolicitudAnimalModel;
+
+
+@Repository
+@Transactional
+public class AnimalDAO {
+
+	 @PersistenceContext
+	 private EntityManager entityManager ;
+
+	public AnimalDAO getAnimal(int id) {
+		   return (AnimalDAO) entityManager.createQuery(" from animales where publicaciones_id = "+id).getResultList().get(0);
+	}
+
+	  
+}
