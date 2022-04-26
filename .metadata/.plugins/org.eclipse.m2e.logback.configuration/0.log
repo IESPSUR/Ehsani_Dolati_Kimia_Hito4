@@ -7262,3 +7262,347 @@ java.io.EOFException: null
 2022-04-24 21:32:45,427 [Worker-148: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-04-24 21:32:45,428 [Worker-148: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-04-24 21:32:45,428 [Worker-148: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 18:34:42,111 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-04-25 18:34:46,134 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 18:34:46,134 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 18:34:46,141 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 18:34:46,169 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 18:34:46,175 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 18:34:46,175 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 18:34:46,176 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 19:47:51,870 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 19:47:51,874 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 19:47:51,876 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 19:47:51,876 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 19:47:51,879 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 19:47:51,879 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 19:47:51,879 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 19:47:53,667 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 19:47:53,668 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 19:47:53,668 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 19:47:53,668 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 19:47:53,670 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 19:47:53,670 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 19:47:53,670 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 19:59:54,489 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 19:59:54,490 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 19:59:54,490 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 19:59:54,491 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 19:59:54,493 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 19:59:54,493 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 19:59:54,493 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 20:23:20,922 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 20:23:20,922 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 20:23:20,922 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 20:23:20,923 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 20:23:20,925 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 20:23:20,925 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 20:23:20,925 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 20:23:23,362 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 20:23:23,362 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 20:23:23,362 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 20:23:23,362 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 20:23:23,365 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 20:23:23,366 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 20:23:23,366 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 20:26:24,311 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-04-25 20:26:29,965 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 20:26:29,965 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 20:26:29,971 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 20:26:30,006 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 20:26:30,018 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 20:26:30,018 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 20:26:30,019 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 21:36:21,531 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 21:36:21,534 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 21:36:21,538 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 21:36:21,563 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 21:36:21,567 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 21:36:21,567 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 21:36:21,567 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 21:39:04,772 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2022-04-25 21:39:44,700 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2022-04-25 21:39:59,448 [Worker-11: Launching adoptAnimals (1)] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/kim/Documentos/PI/adoptAnimals
+2022-04-25 21:39:59,449 [Worker-11: Launching adoptAnimals (1)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean install -Dstyle.color=always
+2022-04-25 21:41:27,505 [Worker-10: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.animals:adoptAnimals:0.0.1-SNAPSHOT @ /home/kim/Documentos/PI/adoptAnimals/pom.xml.
+2022-04-25 21:41:28,194 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 21:41:28,194 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 21:41:28,197 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 21:41:28,197 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 21:41:28,200 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 21:41:28,201 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 21:41:28,201 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 21:42:11,351 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2022-04-25 21:42:24,000 [Worker-10: Launching adoptAnimals (2)] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/kim/Documentos/PI/adoptAnimals
+2022-04-25 21:42:24,000 [Worker-10: Launching adoptAnimals (2)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean install -Dstyle.color=always
+2022-04-25 21:45:34,504 [Worker-23: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.animals:adoptAnimals:0.0.1-SNAPSHOT @ /home/kim/Documentos/PI/adoptAnimals/pom.xml.
+2022-04-25 21:45:34,909 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 21:45:34,909 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 21:45:34,912 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 21:45:34,912 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 21:45:34,915 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 21:45:34,915 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 21:45:34,915 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 21:46:29,653 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2022-04-25 21:46:37,053 [Worker-23: Launching adoptAnimals (3)] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/kim/Documentos/PI/adoptAnimals
+2022-04-25 21:46:37,053 [Worker-23: Launching adoptAnimals (3)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean install -Dstyle.color=always
+2022-04-25 21:51:42,742 [Worker-29: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.animals:adoptAnimals:0.0.1-SNAPSHOT @ /home/kim/Documentos/PI/adoptAnimals/pom.xml.
+2022-04-25 21:51:43,201 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 21:51:43,201 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 21:51:43,203 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 21:51:43,204 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 21:51:43,206 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 21:51:43,206 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 21:51:43,206 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 21:52:00,832 [Worker-29: Launching Executing clean in _home_kim_Documentos_PI_adoptAnimals] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/kim/Documentos/PI/adoptAnimals
+2022-04-25 21:52:00,832 [Worker-29: Launching Executing clean in _home_kim_Documentos_PI_adoptAnimals] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean -Dstyle.color=always
+2022-04-25 21:52:00,832 [Worker-29: Launching Executing clean in _home_kim_Documentos_PI_adoptAnimals] WARN  o.e.m.i.l.MavenLaunchExtensionsSupport - Unknown or unsupported source locator org.eclipse.jdt.internal.launching.sourcelookup.advanced.AdvancedSourceLookupDirector
+2022-04-25 21:55:04,048 [Worker-28: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.animals:adoptAnimals:0.0.1-SNAPSHOT @ /home/kim/Documentos/PI/adoptAnimals/pom.xml.
+2022-04-25 21:55:04,504 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 21:55:04,504 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 21:55:04,508 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 21:55:04,508 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 21:55:04,512 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 21:55:04,512 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 21:55:04,512 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 21:55:58,947 [Worker-31: Discover lifecycle mappings] INFO  o.e.m.i.discovery.MavenDiscovery - No lifecyle mapping found at jar:file:/tmp/RemoteBundleDiscoveryStrategy6966305334323132682.tmp/org.eclipse.m2e.discovery.oss_catalog_1.14.jar_3346990943307007853.jar!/lifecycle%2Forg.eclipse.m2e.discovery.lifecyclemapping.m2e-wtp.xml
+2022-04-25 21:55:58,948 [Worker-31: Discover lifecycle mappings] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-wtp does not contain lifecycle mapping metadata
+2022-04-25 21:55:58,948 [Worker-31: Discover lifecycle mappings] INFO  o.e.m.i.discovery.MavenDiscovery - No lifecyle mapping found at jar:file:/tmp/RemoteBundleDiscoveryStrategy6966305334323132682.tmp/org.eclipse.m2e.discovery.oss_catalog_1.14.jar_3346990943307007853.jar!/lifecycle%2Forg.eclipse.m2e.discovery.lifecyclemapping.m2e-egit.xml
+2022-04-25 21:55:58,949 [Worker-31: Discover lifecycle mappings] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-egit does not contain lifecycle mapping metadata
+2022-04-25 21:55:58,949 [Worker-31: Discover lifecycle mappings] INFO  o.e.m.i.discovery.MavenDiscovery - No lifecyle mapping found at jar:file:/tmp/RemoteBundleDiscoveryStrategy6966305334323132682.tmp/org.eclipse.m2e.discovery.oss_catalog_1.14.jar_3346990943307007853.jar!/lifecycle%2Forg.eclipse.m2e.discovery.lifecyclemapping.m2e-subversive.xml
+2022-04-25 21:55:58,949 [Worker-31: Discover lifecycle mappings] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.lifecyclemapping.m2e-subversive does not contain lifecycle mapping metadata
+2022-04-25 21:55:58,961 [Worker-31: Discover lifecycle mappings] INFO  o.e.m.i.discovery.MavenDiscovery - No lifecyle mapping found at jar:file:/tmp/RemoteBundleDiscoveryStrategy6966305334323132682.tmp/org.eclipse.m2e.discovery.oss_catalog_1.14.jar_3346990943307007853.jar!/lifecycle%2Forg.eclipse.m2e.discovery.extras.m2e-chromatic.xml
+2022-04-25 21:55:58,961 [Worker-31: Discover lifecycle mappings] WARN  o.e.m.i.discovery.MavenDiscovery - CatalogItem org.eclipse.m2e.discovery.extras.m2e-chromatic does not contain lifecycle mapping metadata
+2022-04-25 21:56:16,498 [Worker-31: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.animals:adoptAnimals:0.0.1-SNAPSHOT @ /home/kim/Documentos/PI/adoptAnimals/pom.xml.
+2022-04-25 21:56:16,959 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 21:56:16,959 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 21:56:16,963 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 21:56:16,963 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 21:56:16,966 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 21:56:16,966 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 21:56:16,967 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 21:59:32,312 [Worker-34: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.animals:adoptAnimals:0.0.1-SNAPSHOT @ /home/kim/Documentos/PI/adoptAnimals/pom.xml.
+2022-04-25 21:59:32,800 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 21:59:32,800 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 21:59:32,803 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 21:59:32,803 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 21:59:32,806 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 21:59:32,806 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 21:59:32,806 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 21:59:41,304 [Worker-36: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.animals:adoptAnimals:0.0.1-SNAPSHOT @ /home/kim/Documentos/PI/adoptAnimals/pom.xml.
+2022-04-25 21:59:41,743 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 21:59:41,744 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 21:59:41,759 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 21:59:41,760 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 21:59:41,764 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 21:59:41,764 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 21:59:41,765 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 22:00:39,272 [Worker-36: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.animals:adoptAnimals:0.0.1-SNAPSHOT @ /home/kim/Documentos/PI/adoptAnimals/pom.xml.
+2022-04-25 22:00:39,636 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:00:39,636 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:00:39,639 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 22:00:39,639 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 22:00:39,643 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:00:39,643 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:00:39,643 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 22:00:44,927 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2022-04-25 22:01:27,126 [Worker-37: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.animals:adoptAnimals:0.0.1-SNAPSHOT @ /home/kim/Documentos/PI/adoptAnimals/pom.xml.
+2022-04-25 22:01:27,556 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:01:27,556 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:01:27,560 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 22:01:27,560 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 22:01:27,563 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:01:27,563 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:01:27,563 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 22:01:45,662 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2022-04-25 22:01:52,172 [Worker-37: Launching adoptAnimals (5)] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/kim/Documentos/PI/adoptAnimals
+2022-04-25 22:01:52,172 [Worker-37: Launching adoptAnimals (5)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean install -Dstyle.color=always
+2022-04-25 22:02:13,368 [Worker-36: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.animals:adoptAnimals:0.0.1-SNAPSHOT @ /home/kim/Documentos/PI/adoptAnimals/pom.xml.
+2022-04-25 22:02:13,729 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:02:13,730 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:02:13,732 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 22:02:13,732 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 22:02:13,735 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:02:13,735 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:02:13,735 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 22:12:31,034 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2022-04-25 22:12:38,116 [Worker-34: Launching adoptAnimals (6)] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/kim/Documentos/PI/adoptAnimals
+2022-04-25 22:12:38,116 [Worker-34: Launching adoptAnimals (6)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean install -Dstyle.color=always
+2022-04-25 22:15:47,802 [Worker-40: Launching Executing install in _home_kim_Documentos_PI_adoptAnimals] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/kim/Documentos/PI/adoptAnimals
+2022-04-25 22:15:47,805 [Worker-40: Launching Executing install in _home_kim_Documentos_PI_adoptAnimals] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B install -Dstyle.color=always
+2022-04-25 22:17:53,079 [Worker-44: Launching Executing install in _home_kim_Documentos_PI_adoptAnimals] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/kim/Documentos/PI/adoptAnimals
+2022-04-25 22:17:53,079 [Worker-44: Launching Executing install in _home_kim_Documentos_PI_adoptAnimals] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B install -Dstyle.color=always
+2022-04-25 22:18:46,061 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:18:46,062 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:18:46,063 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 22:18:46,093 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 22:18:46,097 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:18:46,097 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:18:46,097 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 22:19:38,172 [Worker-45: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.animals:adoptAnimals:0.0.1-SNAPSHOT @ /home/kim/Documentos/PI/adoptAnimals/pom.xml.
+2022-04-25 22:19:38,682 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:19:38,682 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:19:38,685 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 22:19:38,685 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 22:19:38,687 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:19:38,687 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:19:38,687 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 22:24:20,467 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2022-04-25 22:24:26,951 [Worker-49: Launching adoptAnimals (7)] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/kim/Documentos/PI/adoptAnimals
+2022-04-25 22:24:26,951 [Worker-49: Launching adoptAnimals (7)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean install -Dstyle.color=always
+2022-04-25 22:26:51,782 [Worker-52: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.animals:adoptAnimals:0.0.1-SNAPSHOT @ /home/kim/Documentos/PI/adoptAnimals/pom.xml.
+2022-04-25 22:26:52,278 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:26:52,279 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:26:52,282 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 22:26:52,283 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 22:26:52,287 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:26:52,287 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:26:52,287 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 22:26:53,630 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:26:53,630 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:26:53,630 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 22:26:53,630 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 22:26:53,632 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:26:53,632 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:26:53,632 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 22:28:08,276 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2022-04-25 22:28:14,167 [Worker-48: Launching adoptAnimals (8)] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/kim/Documentos/PI/adoptAnimals
+2022-04-25 22:28:14,167 [Worker-48: Launching adoptAnimals (8)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean install -Dstyle.color=always
+2022-04-25 22:29:13,436 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:29:13,437 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:29:13,437 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 22:29:13,437 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 22:29:13,439 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:29:13,439 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:29:13,439 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 22:29:36,811 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:29:36,811 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:29:36,812 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 22:29:36,812 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 22:29:36,815 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 22:29:36,816 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 22:29:36,816 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 23:46:30,325 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 23:46:30,326 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 23:46:30,327 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 23:46:30,363 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 23:46:30,365 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 23:46:30,365 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 23:46:30,365 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 23:47:40,258 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 23:47:40,258 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 23:47:40,259 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 23:47:40,281 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 23:47:40,283 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 23:47:40,284 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 23:47:40,284 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 23:50:13,334 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 23:50:13,335 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 23:50:13,336 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 23:50:13,357 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 23:50:13,360 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 23:50:13,360 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 23:50:13,360 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 23:53:03,962 [Worker-69: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 23:53:03,963 [Worker-69: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 23:53:03,964 [Worker-69: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 23:53:03,984 [Worker-69: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 23:53:03,986 [Worker-69: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 23:53:03,986 [Worker-69: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 23:53:03,986 [Worker-69: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 23:53:14,980 [Worker-71: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 23:53:14,980 [Worker-71: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 23:53:14,981 [Worker-71: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 23:53:14,987 [Worker-71: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 23:53:14,989 [Worker-71: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 23:53:14,989 [Worker-71: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 23:53:14,990 [Worker-71: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 23:53:28,671 [Worker-71: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2022-04-25 23:53:29,307 [Worker-71: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.animals:adoptAnimals:0.0.1-SNAPSHOT @ /home/kim/Documentos/PI/adoptAnimals/pom.xml.
+2022-04-25 23:53:30,438 [Worker-71: Updating Maven Project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-configuration-processor/2.6.4/spring-boot-configuration-processor-2.6.4.jar
+2022-04-25 23:53:30,880 [Worker-71: Updating Maven Project] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-configuration-processor/2.6.4/spring-boot-configuration-processor-2.6.4.jar
+2022-04-25 23:53:31,683 [Worker-71: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /adoptAnimals/src/main/java
+2022-04-25 23:53:31,683 [Worker-71: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /adoptAnimals/src/main/resources
+2022-04-25 23:53:31,684 [Worker-71: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /adoptAnimals/src/main/resources
+2022-04-25 23:53:31,684 [Worker-71: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /adoptAnimals/src/test/java
+2022-04-25 23:53:32,781 [Worker-75: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-configuration-processor/2.6.4/spring-boot-configuration-processor-2.6.4-sources.jar
+2022-04-25 23:53:32,923 [Worker-75: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-configuration-processor/2.6.4/spring-boot-configuration-processor-2.6.4-sources.jar
+2022-04-25 23:53:32,959 [Worker-75: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.boot:spring-boot-configuration-processor:2.6.4
+2022-04-25 23:54:41,426 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-04-25 23:54:45,851 [Worker-8: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.animals:adoptAnimals:0.0.1-SNAPSHOT @ /home/kim/Documentos/PI/adoptAnimals/pom.xml.
+2022-04-25 23:54:47,853 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 23:54:47,854 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 23:54:47,859 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 23:54:47,889 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-25 23:54:47,895 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 23:54:47,896 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 23:54:47,896 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 23:56:05,934 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2022-04-25 23:56:13,400 [Worker-2: Launching adoptAnimals (9)] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/kim/Documentos/PI/adoptAnimals
+2022-04-25 23:56:13,402 [Worker-2: Launching adoptAnimals (9)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean install -Dstyle.color=always
+2022-04-25 23:57:00,228 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 23:57:00,229 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 23:57:00,231 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 23:57:00,231 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-25 23:57:00,234 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-25 23:57:00,235 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-25 23:57:00,235 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-25 23:57:37,134 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2022-04-25 23:57:43,099 [Worker-10: Launching adoptAnimals (10)] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/kim/Documentos/PI/adoptAnimals
+2022-04-25 23:57:43,100 [Worker-10: Launching adoptAnimals (10)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean install -Dstyle.color=always
+2022-04-26 00:10:27,404 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-26 00:10:27,405 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-26 00:10:27,407 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-26 00:10:27,431 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-26 00:10:27,434 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-26 00:10:27,434 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-26 00:10:27,434 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-26 00:10:28,466 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-26 00:10:28,466 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-26 00:10:28,467 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-26 00:10:28,492 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-26 00:10:28,494 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-26 00:10:28,495 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-26 00:10:28,495 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-26 00:11:58,873 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-26 00:11:58,874 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-26 00:11:58,874 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-26 00:11:58,896 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-26 00:11:58,898 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-26 00:11:58,898 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-26 00:11:58,898 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-26 00:12:11,458 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2022-04-26 00:12:19,089 [Worker-16: Launching adoptAnimals (11)] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/kim/Documentos/PI/adoptAnimals
+2022-04-26 00:12:19,090 [Worker-16: Launching adoptAnimals (11)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean install -Dstyle.color=always
+2022-04-26 01:39:56,854 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-04-26 02:00:11,035 [Worker-9: Building Project adoptAnimals] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-26 02:00:11,037 [Worker-9: Building Project adoptAnimals] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-26 02:00:11,042 [Worker-9: Building Project adoptAnimals] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-26 02:00:11,063 [Worker-9: Building Project adoptAnimals] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-26 02:00:11,068 [Worker-9: Building Project adoptAnimals] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-26 02:00:11,068 [Worker-9: Building Project adoptAnimals] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-26 02:00:11,068 [Worker-9: Building Project adoptAnimals] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-26 02:00:19,985 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-26 02:00:19,985 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-26 02:00:19,986 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-26 02:00:19,986 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-04-26 02:00:19,989 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-26 02:00:19,989 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-26 02:00:19,989 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-26 02:00:53,765 [Worker-9: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2022-04-26 02:00:54,480 [Worker-9: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.animals:adoptAnimals:0.0.1-SNAPSHOT @ /home/kim/Documentos/PI/adoptAnimals/pom.xml.
+2022-04-26 02:00:55,013 [Worker-9: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /adoptAnimals/src/main/java
+2022-04-26 02:00:55,014 [Worker-9: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /adoptAnimals/src/main/resources
+2022-04-26 02:00:55,014 [Worker-9: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /adoptAnimals/src/main/resources
+2022-04-26 02:00:55,015 [Worker-9: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /adoptAnimals/src/test/java
+2022-04-26 02:00:55,389 [Worker-9: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2022-04-26 02:00:56,738 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-26 02:00:56,738 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-26 02:00:56,739 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-26 02:00:56,761 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-26 02:00:56,766 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-04-26 02:00:56,766 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-04-26 02:00:56,767 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/kim/Documentos/PI/adoptAnimals/src/test/resources
+2022-04-26 02:01:25,638 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-04-26 02:02:39,073 [Worker-0: Launching adoptAnimals] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/kim/Documentos/PI/adoptAnimals
+2022-04-26 02:02:39,075 [Worker-0: Launching adoptAnimals] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -Ppom.xml -B clean install -e -Dstyle.color=always
