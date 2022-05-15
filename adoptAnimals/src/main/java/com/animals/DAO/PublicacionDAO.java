@@ -13,53 +13,72 @@ import com.animals.models.PublicacionModel;
 @Transactional
 public class PublicacionDAO {
 
-	 @PersistenceContext
-	 private EntityManager entityManager ;
+	@PersistenceContext
+	private EntityManager entityManager;
 
-	   public void create(PublicacionModel post) {
-	         entityManager.persist(post);
-	    }
+	public void create(PublicacionModel post) {
+		entityManager.persist(post);
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<PublicacionModel> getAll() {
+		return (List<PublicacionModel>) entityManager.createQuery(" from publicaciones").getResultList();
+	}
+
+	public PublicacionModel getById(int id) {
+		return entityManager.find(PublicacionModel.class, id);
+	}
+
+	public void update(PublicacionModel post) {
+		entityManager.merge(post);
+	}
+
+	public void delete(PublicacionModel post) {
+		if (entityManager.contains(post))
+			entityManager.remove(post);
+		else
+			entityManager.remove(entityManager.merge(post));
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<PublicacionModel> getPostsFotosFollowings(String nombreUsuario) {
+		return (List<PublicacionModel>) entityManager.createQuery(
+				" from publicaciones where nombreUsuario in (select nombreUsuario2 from seguimiento where nombreUsuario1='"
+						+ nombreUsuario + "')")
+				.getResultList();
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<PublicacionModel> getAdminPosts() {
+		return (List<PublicacionModel>) entityManager.createQuery(
+				" from publicaciones where nombreUsuario in (select nombreUsuario from usuarios where tipo='admin')")
+				.getResultList();
+	}
+
+	public PublicacionModel getAnimalInfo(String DNIAnimal) {
+		return (PublicacionModel) entityManager
+				.createQuery(" from publicaciones where id = (select publicaciones_id from animales where DNI = '"
+						+ DNIAnimal + "')")
+				.getResultList().get(0);
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<PublicacionModel> getUserPosts(String nombreUsuario) {
+		return (List<PublicacionModel>) entityManager
+				.createQuery(" from publicaciones where nombreUsuario ='" + nombreUsuario + "'").getResultList();
+
+	}
+
+	public void updatePhotoPostById(String foto, int id) {
+		entityManager.createNativeQuery("update publicaciones set foto= '" + foto + "' where id =" + id)
+				.executeUpdate();
+	}
 	
-	   
-	    @SuppressWarnings("unchecked")
-		public List<PublicacionModel> getAll() {
-	    	return (List<PublicacionModel>) entityManager.createQuery(" from publicaciones").getResultList();
-	    }
-	   
-	   public PublicacionModel getById(int id) {
-	        return entityManager.find(PublicacionModel.class, id);
-	    }
-	   
-	   public void update(PublicacionModel post) {
-	        entityManager.merge(post);
-	    }
+	
+	public int getRowNumber() {
+		return Integer.parseInt(entityManager.createNativeQuery("select count(*) from publicaciones;")
+				.getResultList().get(0).toString());
 
-	    public void delete(PublicacionModel post) {
-	        if (entityManager.contains(post))
-	            entityManager.remove(post);
-	        else
-	            entityManager.remove(entityManager.merge(post));
-	    }
-	    
-	    @SuppressWarnings("unchecked")
-		public List<PublicacionModel> getPostsFotosFollowings(String nombreUsuario) {
-			   return (List<PublicacionModel>) entityManager.createQuery(" from publicaciones where nombreUsuario in (select nombreUsuario2 from seguimiento where nombreUsuario1='"+nombreUsuario+"')").getResultList();
-	    }
-	    
-	    @SuppressWarnings("unchecked")
-		public List<PublicacionModel> getAdminPosts() {
-			   return (List<PublicacionModel>) entityManager.createQuery(" from publicaciones where nombreUsuario in (select nombreUsuario from usuarios where tipo='admin')").getResultList();
-	    }
-	    
-	    public PublicacionModel getAnimalInfo(String DNIAnimal) {
-			   return (PublicacionModel)  entityManager.createQuery(" from publicaciones where id = (select publicaciones_id from animales where DNI = '"+DNIAnimal+"')").getResultList().get(0);
-	    }
+	}
 
-
-		@SuppressWarnings("unchecked")
-		public List<PublicacionModel> getUserPosts(String nombreUsuario) {
-			   return (List<PublicacionModel>) entityManager.createQuery(" from publicaciones where nombreUsuario ='"+nombreUsuario+"'").getResultList();
-
-		}
-	    
 }

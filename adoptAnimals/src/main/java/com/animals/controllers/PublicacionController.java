@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.animals.DAO.AnimalDAO;
 import com.animals.DAO.PublicacionDAO;
 import com.animals.models.PublicacionModel;
 
@@ -18,6 +20,8 @@ import com.animals.models.PublicacionModel;
 public class PublicacionController {
 	@Autowired
 	PublicacionDAO postDao;
+	@Autowired
+	AnimalDAO animalDao;
 
 	@GetMapping("/listarPublicaciones")
 	@ResponseBody
@@ -28,16 +32,17 @@ public class PublicacionController {
 	@GetMapping("/listarPublicaciones/{id}")
 	@ResponseBody
 	public PublicacionModel listarPublicacion(@PathVariable int id) throws NotFoundException {
-		if (id==0) {
+		if (id == 0) {
 			throw new NotFoundException();
 		}
 		return postDao.getById(id);
 	}
-	
+
 	@GetMapping("/listarPublicacionesUsuario/{nombreUsuario}")
 	@ResponseBody
-	public List<PublicacionModel>  listarPublicacionesUsuario(@PathVariable String nombreUsuario) throws NotFoundException {
-		if (nombreUsuario=="") {
+	public List<PublicacionModel> listarPublicacionesUsuario(@PathVariable String nombreUsuario)
+			throws NotFoundException {
+		if (nombreUsuario == "") {
 			throw new NotFoundException();
 		}
 		return postDao.getUserPosts(nombreUsuario);
@@ -48,7 +53,7 @@ public class PublicacionController {
 	public List<PublicacionModel> getAdminPosts() throws NotFoundException {
 		return postDao.getAdminPosts();
 	}
-	
+
 	@DeleteMapping("/borrarPublicacion/{id}")
 	@ResponseBody
 	public void borrarPublicacion(@PathVariable int id) throws NotFoundException {
@@ -60,33 +65,41 @@ public class PublicacionController {
 
 	@PutMapping("/editarPublicacion/{id}")
 	@ResponseBody
-	public void editarPublicacion(@PathVariable int id, @RequestBody PublicacionModel post)  {
-		postDao.update(postDao.getById(id).copyData(post));
+	public void editarPublicacion(@PathVariable int id, @RequestBody PublicacionModel post) {
+		PublicacionModel postAntiguo = postDao.getById(id);
+		if (post.getFoto() == null) {
+			post.setFoto(postAntiguo.getFoto());
+		}
+		postDao.update(postAntiguo.copyData(post));
 	}
-	
+
 	@PostMapping("/crearPublicacion")
 	@ResponseBody
 	public void crearPublicacion(@RequestBody PublicacionModel post) {
+		post.setDeleted("0");
 		postDao.create(post);
+		if (post.getFoto() != "") {
+			int len=postDao.getRowNumber();
+			postDao.updatePhotoPostById(len + "_" + post.getFoto(),len);
+		}
 	}
-	
+
 	@GetMapping("/listarPostsFollowings/{nombreUsuario}")
 	@ResponseBody
 	public List<PublicacionModel> getPostsFollowings(@PathVariable String nombreUsuario) throws NotFoundException {
-		if (nombreUsuario=="") {
+		if (nombreUsuario == "") {
 			throw new NotFoundException();
 		}
 		return postDao.getPostsFotosFollowings(nombreUsuario);
 	}
-	
+
 	@GetMapping("/getAnimalInfo/{DNI}")
 	@ResponseBody
 	public PublicacionModel getAnimalInfo(@PathVariable String DNI) throws NotFoundException {
-		if (DNI=="") {
+		if (DNI == "") {
 			throw new NotFoundException();
 		}
 		return postDao.getAnimalInfo(DNI);
 	}
-	
 
 }

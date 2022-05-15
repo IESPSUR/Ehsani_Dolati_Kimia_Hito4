@@ -26,7 +26,7 @@ public class SeguimientoModel {
     @JoinColumn(name = "nombreUsuario1",foreignKey = @ForeignKey(name="USUARIO_ID_FK"))
 	private UsuarioModel nombreUsuario1;
 	@ManyToOne
-    @JoinColumn(name = "nombreUsuario2",foreignKey = @ForeignKey(name="USUARIO_ID_FK"))
+    @JoinColumn(name = "nombreUsuario2",foreignKey = @ForeignKey(name="USUARIO_ID2_FK"))
 	private UsuarioModel nombreUsuario2;
 
 	@Id

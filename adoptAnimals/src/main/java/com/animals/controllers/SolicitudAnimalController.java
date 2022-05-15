@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.animals.DAO.SolicitudAnimalDAO;
+import com.animals.models.AnimalModel;
 import com.animals.models.SolicitudAnimalModel;
 
 @RestController
@@ -63,5 +64,11 @@ public class SolicitudAnimalController {
 		requestDao.responderSolicitud(respuesta, solicitud);
 	}
 	
+	
+	@GetMapping("/listarAnimalesAceptados/")
+	@ResponseBody
+	public List<SolicitudAnimalModel> listarAnimal() {
+		return requestDao.getAcceptedAnimals();
+	}
 
 }

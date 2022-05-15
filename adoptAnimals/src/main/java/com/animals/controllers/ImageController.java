@@ -14,6 +14,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -66,13 +67,12 @@ public class ImageController {
 		}
 		ArrayList<String> tipoImagen = new ArrayList<String>();
 		tipoImagen.add("image/png");
-		
+
 		HttpHeaders httpHeaders = new HttpHeaders();
 		httpHeaders.put("Content-Type", tipoImagen);
-		
+
 		return ResponseEntity.ok().headers(httpHeaders).body(file);
 
-		
 	}
 
 	@GetMapping("/get/followingsImage/{nombreUsu:.+}")
@@ -94,15 +94,14 @@ public class ImageController {
 
 		HttpHeaders httpHeaders = new HttpHeaders();
 		httpHeaders.put("Content-Type", tipoImagen);
-		
+
 		return ResponseEntity.ok().headers(httpHeaders).body(images);
 
-		
 	}
-	
+
 	@PostMapping("/upload/image/")
 	public String handleFileUpload(@RequestParam("image") MultipartFile file) {
-
+		String filename= StringUtils.cleanPath(file.getOriginalFilename());
 		// Si la imagen es del pefil del usuario, sino (si es de una publicación)
 		if (!Pattern.compile("^[0-9]+$").matcher(file.getOriginalFilename().split("_")[0]).matches()) {
 			UsuarioModel userToUpdate = new UsuarioModel(file.getOriginalFilename().split("_")[0]);
@@ -110,13 +109,18 @@ public class ImageController {
 			userToUpdate.setFoto(file.getOriginalFilename());
 			userDao.update(userToUpdate);
 		} else {
-			PublicacionModel postToUpdate = new PublicacionModel(
-					Integer.parseInt(file.getOriginalFilename().split("_")[0]));
-			postToUpdate.copyData(postDao.getById(Integer.parseInt(file.getOriginalFilename().split("_")[0])));
-			postToUpdate.setFoto(file.getOriginalFilename());
-			postDao.update(postToUpdate);
+			if (!file.getOriginalFilename().split("_")[0].equals("0")) {
+				PublicacionModel postToUpdate = new PublicacionModel(
+						Integer.parseInt(file.getOriginalFilename().split("_")[0]));
+				postToUpdate.copyData(postDao.getById(Integer.parseInt(file.getOriginalFilename().split("_")[0])));
+				postToUpdate.setFoto(file.getOriginalFilename());
+				postDao.update(postToUpdate);
+			}else {
+				filename= (postDao.getRowNumber()) +"_"+ file.getOriginalFilename().split("_")[1];
+			}
 		}
-		return storageService.store(file);
+
+		return storageService.store(file, filename);
 	}
 
 	/*

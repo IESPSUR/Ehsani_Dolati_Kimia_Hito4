@@ -15,12 +15,18 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Filter;
+import org.hibernate.annotations.FilterDef;
+import org.hibernate.annotations.ParamDef;
+import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
 import lombok.Data;
 
-@Where(clause = "deleted = false")
+@SQLDelete(sql = "UPDATE solicitudAnimal SET deleted=true WHERE animalesDNI = ? and nombreUsuario = ? ")
 @Table(name= "solicitudAnimal")
+@FilterDef(name = "deletedPostFilter", parameters = @ParamDef(name = "isDeleted", type = "string"))
+@Filter(name = "deletedPostFilter", condition = "deleted = :isDeleted")
 @Data
 @Entity(name="solicitudAnimal")
 public class SolicitudAnimalModel {

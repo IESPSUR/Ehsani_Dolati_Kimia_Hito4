@@ -29,13 +29,15 @@ public class AnimalModel {
 	public AnimalModel(String DNI) {
 		this.DNI= DNI;
 	}
+	public AnimalModel(String DNI,PublicacionModel publicaciones_id) {
+		this.DNI= DNI;
+		this.publicaciones_id= publicaciones_id;
+	}
 	@Id
 	@Column(name = "DNI")
 	private String DNI;
 	@Column
 	private Date fechaNacimiento;
-	@Column
-	private String foto;
 	@Column
 	private String nombre;
 	@Column
@@ -55,5 +57,18 @@ public class AnimalModel {
 	}
 	
 
+	public AnimalModel copyData(AnimalModel newAnimal) {
+		this.publicaciones_id= newAnimal.publicaciones_id;
+		this.DNI=newAnimal.DNI;
+		this.fechaNacimiento=newAnimal.fechaNacimiento;
+		this.ubicacion=newAnimal.ubicacion;
+		this.nombre=newAnimal.nombre;
+		this.raza=newAnimal.raza;
+		this.sexo=newAnimal.sexo;
+		this.deleted="0";
+		return this;
+
+		
+	}
 
 }

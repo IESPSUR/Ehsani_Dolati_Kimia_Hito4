@@ -54,8 +54,7 @@ public class FileSystemStorageService implements StorageService{
      * 
      */
     @Override
-    public String store(MultipartFile file) {
-        String filename = StringUtils.cleanPath(file.getOriginalFilename());
+    public String store(MultipartFile file, String filename) {
         String extension = StringUtils.getFilenameExtension(filename);
         String storedFilename = filename;
         try {

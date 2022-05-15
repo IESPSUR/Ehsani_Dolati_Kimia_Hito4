@@ -29,17 +29,17 @@ public class SeguimientoDAO {
 	   
 	    @SuppressWarnings("unchecked")
 		public List<SeguimientoModel> getFollowings(String nombreUsuario1 ) {
-	        return (List<SeguimientoModel>) entityManager.createQuery(" from seguimiento where nombreUsuario1 = '" + nombreUsuario1 + "'" ).getResultList();
+	        return entityManager.createNativeQuery("select s.nombreUsuario2 from seguimiento s where s.nombreUsuario1 = '" + nombreUsuario1 + "'" ).getResultList();
 	    }
 	   
 	   	@SuppressWarnings("unchecked")
 		public List<SeguimientoModel> getFollowers(String nombreUsuario2 ) {
-	        return (List<SeguimientoModel>) entityManager.createQuery(" from seguimiento where nombreUsuario2 = '" + nombreUsuario2 + "'").getResultList();
+	       return entityManager.createNativeQuery("select s.nombreUsuario1 from seguimiento s where s.nombreUsuario2 = '" + nombreUsuario2 + "'").getResultList();
 	    }
 	   	
 	    @SuppressWarnings("unchecked")
 		public List<SeguimientoModel> getFollow(String nombreUsuario1 , String nombreUsuario2 ) {
-	        return (List<SeguimientoModel>) entityManager.createQuery(" from seguimiento where nombreUsuario1 = '"+nombreUsuario1 +"' and nombreUsuario2 = '" + nombreUsuario2+"'").getResultList();
+	        return entityManager.createQuery(" from seguimiento where nombreUsuario1 = '"+nombreUsuario1 +"' and nombreUsuario2 = '" + nombreUsuario2+"'").getResultList();
 	    }
 
 	    public void delete(String nombreUsuario1 , String nombreUsuario2) {

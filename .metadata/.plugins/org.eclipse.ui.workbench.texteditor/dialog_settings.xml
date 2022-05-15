@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="getByNombreUsuario"/>
+		<item key="selection" value="mail"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="mail"/>
+			<item value="2.5.2"/>
+			<item value="post"/>
+			<item value="newUser"/>
 			<item value="getByNombreUsuario"/>
 			<item value="Dni"/>
 			<item value="seguimientos"/>
@@ -19,12 +23,10 @@
 			<item value="follow"/>
 			<item value="userDao"/>
 			<item value="Usuario"/>
-			<item value="crearUsuario"/>
-			<item value="comment"/>
-			<item value="ComentarioModel"/>
-			<item value="post"/>
 		</list>
 		<list key="replacehistory">
+			<item value="animal"/>
+			<item value="newAnimal"/>
 			<item value="DNI"/>
 			<item value="SolicitudAnimalModel"/>
 			<item value="requestDao"/>
@@ -38,13 +40,11 @@
 			<item value="comment"/>
 			<item value="Comentario"/>
 			<item value="ComentarioModel"/>
-			<item value="PublicacionModel"/>
-			<item value="postDao"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="754"/>
-		<item key="DIALOG_Y_ORIGIN" value="116"/>
+		<item key="DIALOG_X_ORIGIN" value="804"/>
+		<item key="DIALOG_Y_ORIGIN" value="153"/>
 		<item key="DIALOG_WIDTH" value="363"/>
 		<item key="DIALOG_HEIGHT" value="437"/>
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
