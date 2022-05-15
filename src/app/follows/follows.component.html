@@ -4,18 +4,14 @@
 
   <div class="px-4" *ngFor="let user of users">
     
-    <div class="row d-flex align-items-center my-4" *ngIf="follower==false"><div class="col-3"><img class="rounded-circle mx-3"
+    <div class="row d-flex align-items-center my-4" *ngIf="follower==false"><div class="col-3"><a href="/users/{{user}}"><img class="rounded-circle mx-3"
       src="../../assets/profile.jpeg" width="60px"
-      height="60px"></div><div class="col"> {{user.nombreUsuario2.nombreUsuario}} </div> <div class="col"><button class="btn btn-danger" (click)="unFollow(user.nombreUsuario2.nombreUsuario)">Unfollow</button></div></div>
+      height="60px"></a></div><div class="col"> {{user}} </div> <div class="col"><button class="btn btn-danger" (click)="unFollow(user)">Unfollow</button></div></div>
 
 
-
-
-
-
-    <div class="row d-flex align-items-center my-4" *ngIf="follower==true"><div class="col-3"><img class="rounded-circle mx-3"
+    <div class="row d-flex align-items-center my-4" *ngIf="follower==true"><div class="col-3"><a href="/users/{{user}}"><img class="rounded-circle mx-3"
       src="../../assets/profile.jpeg" width="60px"
-      height="60px"></div><div class="col"> {{user.nombreUsuario1.nombreUsuario}}</div></div>
+      height="60px"></a></div><div class="col"> {{user}}</div></div>
   </div>
 
 

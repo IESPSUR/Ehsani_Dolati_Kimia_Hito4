@@ -77,7 +77,7 @@ export class RegisterComponent implements OnInit {
       dni: new FormControl(this.user.dni, [Validators.required]),
       nombre: new FormControl(this.user.nombre, [Validators.required]),
       apellido: new FormControl(this.user.apellido, [Validators.required]),
-      correo: new FormControl(this.user.correo, [Validators.required, Validators.pattern(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+$/)]),
+      correo: new FormControl(this.user.correo, [Validators.required, Validators.pattern(/^.+@[a-zA-Z0-9]+\.[a-zA-Z]+$/)]),
       fechaNacimiento: new FormControl(this.user.fechaNacimiento, [Validators.required]),
       file: new FormControl(this.user.foto)
 

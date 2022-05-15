@@ -16,13 +16,14 @@ const routes: Routes = [
   {path: 'comments/:id', component: CommentComponent},
   {path: 'users', component: UserComponent},
   {path: 'users/:nombreUsuario', component: UserComponent},
+  {path: 'animalsAdopted/:nombreUsuario', component: UserComponent},
 
   {path: 'myProfile', component: UserComponent},
   {path: 'editProfile/:nombreUsuario', component: RegisterComponent},
   {path: 'posts', component: PostComponent},
   {path: 'posts/:id', component: PostComponent},
   {path: 'postsUser/:nombreUsuario', component: PostComponent},
-
+  
   {path: 'adminPosts', component: PostComponent},
   {path: 'editPost/:id', component: PostFormComponent},
   {path: 'createPost', component: PostFormComponent},

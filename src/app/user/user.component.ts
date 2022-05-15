@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { lastValueFrom } from 'rxjs';
 import { FollowDTO } from '../DTO/FollowDTO';
 import { UserDTO } from '../DTO/UserDTO';
+import { AdoptionRequestsService } from '../services/adoption-requests.service';
 import { AuthenticationService } from '../services/authentication.service';
 import { FollowsService } from '../services/follows.service';
 import { ImageService } from '../services/image.service';
@@ -20,9 +22,11 @@ export class UserComponent implements OnInit {
   public estadoSeguimiento: string = "Follow";
   public imagenUsu: SafeResourceUrl;
   public imagenTemp: SafeResourceUrl;
-  public file:File;
-  
-  constructor(private _sanitizer: DomSanitizer,public _imageService: ImageService,private _followService: FollowsService, private _userService: UserService, private _router: Router, private actRout: ActivatedRoute, public _authService: AuthenticationService) {
+  public file: File;
+  public adoptedAnimals: Array<any>;
+  public respuestaImagen: any;
+
+  constructor(private _adoptionService: AdoptionRequestsService, private _sanitizer: DomSanitizer, public _imageService: ImageService, private _followService: FollowsService, private _userService: UserService, private _router: Router, private actRout: ActivatedRoute, public _authService: AuthenticationService) {
     this.nombreUsuario = this.actRout.snapshot.params['nombreUsuario'];
   }
 
@@ -32,6 +36,9 @@ export class UserComponent implements OnInit {
       this.getImagen();
     } else if (this._router.url == "/users/" + this.nombreUsuario) {
       this.obtenerUsuarios(this.nombreUsuario);
+      this.getImagen(this.nombreUsuario);
+    } else if (this._router.url == "/animalsAdopted/" + this.nombreUsuario) {
+      this.getAdoptedAnimals();
     } else {
       this.obtenerUsuarios();
     }
@@ -68,39 +75,45 @@ export class UserComponent implements OnInit {
 
   }
 
-  public deleteAccount(){
+  public deleteAccount() {
     this._userService.delete().subscribe(data => {
-     sessionStorage.removeItem("nombreUsuario");
-     this._router.navigate(['/login/']);
+      sessionStorage.removeItem("nombreUsuario");
+      this._router.navigate(['/login/']);
     });
-    
+
   }
 
-
-  public getImagen(idPub?: number, nombreUsu?: string): any {
-    this._imageService.viewImage(idPub ? idPub : 0, nombreUsu ? nombreUsu : "").subscribe(
-      res => {
-        const reader = new FileReader();
-        reader.onload = (e: any) => {
-           this.imagenUsu = this._sanitizer.bypassSecurityTrustResourceUrl(e.target.result);
-           if(!nombreUsu && !idPub){
-            this.imagenUsu = this._sanitizer.bypassSecurityTrustResourceUrl(e.target.result);
-           }
-        }
-        reader.readAsDataURL(new Blob([res]));
+  public async getImagen(nombreUsuOIdPub?: string) {
+    var res = await lastValueFrom(this._imageService.viewImage(nombreUsuOIdPub ? nombreUsuOIdPub : ""));
+    const reader = new FileReader();
+    reader.onload = (e: any) => {
+      this.imagenTemp = this._sanitizer.bypassSecurityTrustResourceUrl(e.target.result);
+      if (!nombreUsuOIdPub) {
+        this.imagenUsu = this.imagenTemp;
       }
-    );
-      return this.imagenUsu;
+    }
+    
+    reader.readAsDataURL(new Blob([res]));
+    
+
   }
 
 
-  public cambiarImagen(event:Event){
+  public cambiarImagen(event: Event) {
+    this.actualizarImagen(event);
+    this.getImagen();
+    window.location.reload();
+  }
+
+  public async actualizarImagen(event: Event) {
     this.file = this._imageService.onImageUpload(event);
-    
-    this._userService.update(new UserDTO("","","","","","","",this.file.name,"",0)).subscribe(data => {
-      this._imageService.imageUploadAction().subscribe();
-      this.getImagen();
-     
+    await lastValueFrom(this._userService.update(new UserDTO("", "", "", "", "", "", "", sessionStorage.getItem("nombreUsuario") + "_" + this.file.name, "", 0)));
+    await lastValueFrom(this._imageService.imageUploadAction());
+  }
+
+  public getAdoptedAnimals() {
+    this._adoptionService.getAdoptedAnimals().subscribe(data => {
+      this.adoptedAnimals = data;
     });
   }
 }

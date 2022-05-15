@@ -70,13 +70,13 @@ export class CommentComponent implements OnInit {
   }
 
 
-  public getImagen(idPub?: number, nombreUsu?: string): any {
-    this._imageService.viewImage(idPub ? idPub : 0, nombreUsu ? nombreUsu : "").subscribe(
+  public getImagen(nombreUsuOIdPub?: string): any {
+    this._imageService.viewImage(nombreUsuOIdPub ? nombreUsuOIdPub : "").subscribe(
       res => {
         const reader = new FileReader();
         reader.onload = (e: any) => {
            this.imagenTemp = this._sanitizer.bypassSecurityTrustResourceUrl(e.target.result);
-           if(!nombreUsu && !idPub){
+           if(!nombreUsuOIdPub){
             this.imagenUsu = this._sanitizer.bypassSecurityTrustResourceUrl(e.target.result);
            }
         }
@@ -86,4 +86,7 @@ export class CommentComponent implements OnInit {
       return this.imagenTemp;
   }
   
+  public existsComments(){
+    return this.comments.length >0;
+  }
 }

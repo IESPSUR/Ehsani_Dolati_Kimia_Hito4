@@ -30,6 +30,7 @@ export class UserService {
   addUser(user:UserDTO): Observable<any>{
     user.tipo="usuario";
     user.deleted= 0;
+    user.foto="defaultPhoto.png";
     return this.http.post(this.endpointCrear,user);
   }
 

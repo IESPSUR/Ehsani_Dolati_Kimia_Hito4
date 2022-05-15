@@ -1,141 +1,181 @@
-<ng-container *ngIf="user; else usuarios">
-
-  <div class="container emp-profile">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="profile-img">
-          <img
-            [src]=imagenUsu
-            alt="" />
-          <div *ngIf="esMiPerfil(user.nombreUsuario)" class="file btn btn-lg">
-            Change Photo
-            <input type="file" name="file"  (change)="cambiarImagen($event)"/>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="profile-head my-5">
-          <h5>
-            {{user.nombre}} {{user.apellido}}
-          </h5>
-          <h6>
-            {{user.correo}}
-          </h6>
-          <ul class="nav nav-tabs my-3" id="myTab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-                aria-selected="true">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="profile-tab" data-toggle="tab" href='postsUser/{{user.nombreUsuario}}'
-                [routerLinkActive]="['activado']" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <a *ngIf="esMiPerfil(user.nombreUsuario)" class="profile-edit-btn" href="editProfile/{{user.nombreUsuario}}"
-          [routerLinkActive]="['activado']"> Edit Profile </a>
-        <a *ngIf="esMiPerfil(user.nombreUsuario)==false" class="btn btn-success"
-          (click)="follow(user.nombreUsuario)"> {{estadoSeguimiento}}</a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="profile-work">
-          <p>LINKS</p>
-          <a [routerLink]="['followers']" [routerLinkActive]="['activado']"> Followers </a><br>
-          <a [routerLink]="['followings']" [routerLinkActive]="['activado']"> Followings </a><br>
-          <a *ngIf="esMiPerfil(user.nombreUsuario)" class="text-danger" data-bs-toggle="modal"
-            data-bs-target="#modalDeleteAccount"> Delete Account</a>
-
-
-        </div>
-      </div>
-      <div class="col-md-8">
-        <div class="tab-content profile-tab" id="myTabContent">
-          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <div class="row">
-              <div class="col-md-6">
-                <label>Username</label>
-              </div>
-              <div class="col-md-6">
-                <p>{{user.nombreUsuario}}</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label>Name</label>
-              </div>
-              <div class="col-md-6">
-                <p>{{user.nombre}}</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label>Lastname</label>
-              </div>
-              <div class="col-md-6">
-                <p>{{user.apellido}}</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label>DNI</label>
-              </div>
-              <div class="col-md-6">
-                <p>{{user.dni}}</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label>Email</label>
-              </div>
-              <div class="col-md-6">
-                <p>{{user.correo}}</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label>Birth Date</label>
-              </div>
-              <div class="col-md-6">
-                <p>{{user.fechaNacimiento}}</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <hr>
-
-
-
-</ng-container>
-
-
-
-
-<ng-template #usuarios>
-  <div class="container px-5 py-4 ">
-
-    <table>
-      <thead>
+<ng-container *ngIf="adoptedAnimals; else noAdoptedAnimals">
+  <div class="container py-5">
+    <table class="table table-striped ">
+      <thead class="thead-dark">
         <tr>
-          <th>ID</th>
+          <th>DNI</th>
+          <th>Name</th>
+          <th>Race</th>
+          <th>Sex</th>
+          <th>Location</th>
+          <th>Date</th>
+          <th>UserName</th>
+          <th>UserName's Email</th>
+          <th>UserName's DNI</th>
         </tr>
       </thead>
-      <tbody *ngFor="let user of users">
-        <tr>
-          <td>{{user.nombreUsuario}}</td>
+      <tbody *ngFor="let animal of adoptedAnimals">
+        <tr *ngIf="animal.animalesDNI.publicaciones_id.nombreUsuario.nombreUsuario == nombreUsuario">
+          <td>{{animal.animalesDNI.dni}}</td>
+          <td>{{animal.animalesDNI.nombre}}</td>
+          <td>{{animal.animalesDNI.raza}}</td>
+          <td>{{animal.animalesDNI.sexo}}</td>
+          <td>{{animal.animalesDNI.ubicacion}}</td>
+          <td>{{animal.fecha}}</td>
+          <td>{{animal.nombreUsuario.nombreUsuario}}</td>
+          <td>{{animal.nombreUsuario.correo}}</td>
+          <td>{{animal.nombreUsuario.dni}}</td>
+
+          
         </tr>
       </tbody>
     </table>
   </div>
+</ng-container>
+
+<ng-template #noAdoptedAnimals>
+
+  <ng-container *ngIf="user; else usuarios">
+    <div class="container emp-profile">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="profile-img">
+            <img [src]="imagenUsu" alt="" />
+            <div *ngIf="esMiPerfil(user.nombreUsuario)" class="file btn btn-lg">
+              Change Photo
+              <input type="file" name="file" (change)="cambiarImagen($event)" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="profile-head my-5">
+            <h5>
+              {{user.nombre}} {{user.apellido}}
+            </h5>
+            <h6>
+              {{user.correo}}
+            </h6>
+            <ul class="nav nav-tabs my-3" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                  aria-selected="true">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href='postsUser/{{user.nombreUsuario}}'
+                  [routerLinkActive]="['activado']" role="tab" aria-controls="profile"
+                  aria-selected="false">Timeline</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <a *ngIf="esMiPerfil(user.nombreUsuario)" class="profile-edit-btn" href="editProfile/{{user.nombreUsuario}}"
+            [routerLinkActive]="['activado']"> Edit Profile </a>
+          <a *ngIf="esMiPerfil(user.nombreUsuario)==false && _authService.isAuth()" class="btn btn-success"
+            (click)="follow(user.nombreUsuario)"> {{estadoSeguimiento}}</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="profile-work">
+            <p>LINKS</p>
+            <a [routerLink]="['followers']" [routerLinkActive]="['activado']"> Followers </a><br>
+            <a [routerLink]="['followings']" [routerLinkActive]="['activado']"> Followings </a><br>
+            <a *ngIf="esMiPerfil(user.nombreUsuario)" class="text-danger" data-bs-toggle="modal"
+              data-bs-target="#modalDeleteAccount"> Delete Account</a>
+
+
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="tab-content profile-tab" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Username</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{user.nombreUsuario}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Name</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{user.nombre}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Lastname</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{user.apellido}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>DNI</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{user.dni}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Email</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{user.correo}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Birth Date</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{user.fechaNacimiento}}</p>
+                </div>
+                <div class="col-md-6"> If you want to see your previous animals that you have given them to adoption,
+                  click
+                  <a href="animalsAdopted/{{user.nombreUsuario}}">here.</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr>
+
+  </ng-container>
+
+
+
+
+  <ng-template #usuarios>
+    <div class="container px-5 py-4 ">
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let user of users">
+          <tr>
+            <td>{{user.nombreUsuario}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template>
 </ng-template>
+
 
 
 <!-- Modal -->

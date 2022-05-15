@@ -10,6 +10,7 @@ import { RequestDTO } from '../DTO/RequestDTO';
 export class AdoptionRequestsService {
   protected endpointGetSolicitudesUsu:string = environment.url_back + '/listarSolicitudesDeUnUsuario/';
   protected endpointResponderSolicitud:string = environment.url_back + '/responderSolicitud/';
+  protected endpointGetAdoptedAnimals:string = environment.url_back + '/listarAnimalesAceptados/';
 
   constructor(private http:HttpClient) { }
 
@@ -19,5 +20,9 @@ export class AdoptionRequestsService {
 
   responderSolicitud(respuesta:string , solicitud:RequestDTO): Observable<any>{
     return this.http.put(this.endpointResponderSolicitud+respuesta,solicitud );
+  }
+
+  getAdoptedAnimals(): Observable<any>{
+    return this.http.get(this.endpointGetAdoptedAnimals );
   }
 }

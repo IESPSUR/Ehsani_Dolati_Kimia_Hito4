@@ -3,4 +3,8 @@ export class FollowDTO{
     public nombreUsuario1: string,
     public nombreUsuario2: string) {
   }
+
+  /*public nombreUsuario1: string;
+    public nombreUsuario2: string;
+    public fecha?: Date;*/
 }

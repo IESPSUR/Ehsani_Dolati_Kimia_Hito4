@@ -24,7 +24,7 @@ export class ImageService {
   }
 
 
-  imageUploadAction(idPub?: number): Observable<any> {
+  imageUploadAction(idPub?: string): Observable<any> {
     if (this.uploadedImage != null) {
       const imageFormData = new FormData();
       imageFormData.append('image', this.uploadedImage, (idPub ? idPub : sessionStorage.getItem("nombreUsuario")) + "_" + this.uploadedImage.name);
@@ -34,8 +34,8 @@ export class ImageService {
     }
   }
 
-  viewImage(idPub?: number, nombreUsu?: string): Observable<any> {
-    return this.http.get(this.endpointGetImage + (idPub != 0 ? idPub : (nombreUsu != "" ? nombreUsu : sessionStorage.getItem("nombreUsuario"))), {
+  viewImage(nombreUsuOIdPub?: string): Observable<any> {
+    return this.http.get(this.endpointGetImage + (nombreUsuOIdPub != "" ? nombreUsuOIdPub : sessionStorage.getItem("nombreUsuario")), {
       responseType: 'blob'
     });
   }

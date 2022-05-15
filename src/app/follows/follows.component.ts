@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { lastValueFrom } from 'rxjs/internal/lastValueFrom';
 import { UserDTO } from '../DTO/UserDTO';
 import { FollowsService } from '../services/follows.service';
 import { UserService } from '../services/user.service';
@@ -20,8 +21,8 @@ export class FollowsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.title="Followers";
-    {
+    this.title="Followings";
+    
       if (this.nombreUsuario) {
         if (this._router.url == "/users/" + this.nombreUsuario + "/followings") {
           this.followings(this.nombreUsuario);
@@ -37,18 +38,19 @@ export class FollowsComponent implements OnInit {
         if (this._router.url == "/myProfile/followers") {
           this.followers();
           this.follower=true;
+          this.title="Followers";
         } else {
           this.follower=false;
           this.followings();
+          this.title="Followings";
         }
       }
-    }
+    
   }
 
-  public followers(nombreUsuario?: string) {
-    this._followService.followers(nombreUsuario ? nombreUsuario : sessionStorage.getItem("nombreUsuario") || "").subscribe(data => {
-      return this.users = data;
-    })
+  public async followers(nombreUsuario?: string) {
+    var service = this._followService.followers(nombreUsuario ? nombreUsuario : sessionStorage.getItem("nombreUsuario") || "");
+    this.users = await lastValueFrom(service);
   }
 
   public followings(nombreUsuario?: string) {

@@ -1,7 +1,7 @@
 <div class="containerComponentes container  py-5">
 
   <div class="row py-3">
-    <div class="col-2"><img class="rounded-circle mx-3" src="../../assets/profile.jpeg" width="80px" height="80px">
+    <div class="col-2"><a href="/users/{{post.nombreUsuario.nombreUsuario}}"><img class="rounded-circle mx-3" src="../../assets/profile.jpeg" width="80px" height="80px"></a>
     </div>
     <div class="col-10 d-flex align-items-center">
       <h5>{{post.nombreUsuario.nombreUsuario}}</h5>
@@ -26,6 +26,7 @@
 
 
   <div class="my-5">
+    <ng-container *ngIf="existsComments() ; else noComments">
   <div class="my-4" style="padding-left: 30px;" *ngFor="let comment of comments">
     <div class="row">
       <div class="col-2"><a href="/users/{{comment.nombreUsuario.nombreUsuario}}"><img class="rounded-circle mx-3" src="../../assets/profile2.avif" width="50px"
@@ -35,8 +36,13 @@
           class="btn btn-danger" (click)="borrarComentario(comment.id)">Delete</button></div>
     </div>
   </div>
+</ng-container>
   </div>
 
 
 
+  <ng-template #noComments>
+    <div class="text-center">There is no Comments on this post</div>
+  </ng-template>
 </div>
+

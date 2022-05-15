@@ -2,23 +2,24 @@
 <div class="container">
 
     <form enctype="multipart/form-data" (ngSubmit)="crearEditar()" [formGroup]="registerForm" target="_top" class="row g-3">
-        <div class="col-md-4 position-relative">
+        <div class="col-md position-relative">
             <label for="nombreUsuario" class="form-label">Username</label>
             <input formControlName="nombreUsuario" [attr.disabled]="nombreUsuario ? 'disabled' : null" type="text" class="form-control" >
             <span class="text-danger"
                 *ngIf="registerForm.get('nombreUsuario')?.touched && registerForm.get('nombreUsuario')?.hasError('required')">This
                 input is required</span>
         </div>
-        <div class="col-md-4 position-relative">
+
+        <div *ngIf="title=='Register'" class="col-md position-relative">
             <label for="contrasenia" class="form-label">Password</label>
-            <input formControlName="contrasenia" type="password" class="form-control">
+            <input formControlName="contrasenia" type="password" class="form-control" >
             <span class="text-danger"
                 *ngIf="registerForm.get('contrasenia')?.touched && registerForm.get('contrasenia')?.hasError('required')">This
                 input is
                 required</span>
 
         </div>
-        <div class="col-md-4 position-relative">
+        <div class="col-md position-relative">
             <label for="dni" class="form-label">DNI</label>
             <input formControlName="dni" type="text" class="form-control">
             <span class="text-danger"
@@ -37,7 +38,7 @@
 
         <div class="col-md-6 position-relative">
             <label for="apellido" class="form-label">Last Name</label>
-            <textarea formControlName="apellido" class="form-control"></textarea>
+            <input type="text" formControlName="apellido" class="form-control">
             <span class="text-danger"
                 *ngIf="registerForm.get('apellido')?.touched && registerForm.get('apellido')?.hasError('required') ">This
                 input is

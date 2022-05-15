@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthenticationService } from './services/authentication.service';
 
 declare var $: any;
@@ -10,7 +11,7 @@ declare var $: any;
 export class AppComponent {
   title = 'AdopcionAnimales';
 
-  constructor(public _authService: AuthenticationService) { }
+  constructor(public _authService: AuthenticationService, private _router: Router) { }
 
   /**
    * Borrar la información del usuario de la sesión para hacer un logout
@@ -18,6 +19,8 @@ export class AppComponent {
   public logout(){
     sessionStorage.removeItem("nombreUsuario");
     sessionStorage.removeItem("tipo");
+    this._router.navigate(['/login/']);
+
   }
 
   

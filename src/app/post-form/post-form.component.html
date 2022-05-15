@@ -20,10 +20,10 @@
         </div>
         <div class=" position-relative">
             <label for="tipo" class="form-label">Select the reason of this post</label>
-            <select id="tipo" ([ngModel])="selectedType" (change)="cargarComponentes()" formControlName="tipo"
+            <select id="tipo" value=post.tipo [(ngModel)]="selectedType" (change)="cargarComponentes()" formControlName="tipo"
                 type="text" class="form-control">
-                <option id="animal" value="animal"> For Adoption</option>
-                <option id="noticia" value="noticia"> News</option>
+                <option id="animal" value="animal" [selected]="post && post.tipo == 'animal'" > For Adoption</option>
+                <option id="noticia" value="noticia" [selected]="post && post.tipo == 'noticia'"> News</option>
             </select>
             <span class="text-danger"
                 *ngIf="postForm.get('tipo')?.touched && postForm.get('tipo')?.hasError('required')">This
@@ -40,7 +40,7 @@
         <div *ngIf="selectedType=='animal'">
             <div class=" position-relative">
                 <label for="dni" class="form-label">animals DNI</label>
-                <input formControlName="dni" type="text" class="form-control">
+                <input formControlName="dni" type="text" class="form-control" >
                 <span class="text-danger"
                     *ngIf="postForm.get('dni')?.touched && postForm.get('dni')?.hasError('required')">This
                     input is required</span>
