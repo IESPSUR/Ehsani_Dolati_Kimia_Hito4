@@ -1,19 +1,14 @@
 package com.animals.controllers;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import javax.xml.transform.Source;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.MultiValueMap;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,6 +23,8 @@ import com.animals.DAO.UsuarioDAO;
 import com.animals.models.PublicacionModel;
 import com.animals.models.UsuarioModel;
 import com.animals.services.StorageService;
+
+import responses.ServeFileResponse;
 
 @RestController
 public class ImageController {
@@ -70,7 +67,12 @@ public class ImageController {
 
 		HttpHeaders httpHeaders = new HttpHeaders();
 		httpHeaders.put("Content-Type", tipoImagen);
-
+		List<Resource> lista = new ArrayList<Resource>();
+		lista.add(file);
+		lista.add(file);
+		
+		//ServeFileResponse response = new ServeFileResponse(0, nombreUsuNumberPub, null, null, null);
+		//response.setList(lista);
 		return ResponseEntity.ok().headers(httpHeaders).body(file);
 
 	}

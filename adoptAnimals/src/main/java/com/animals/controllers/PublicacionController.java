@@ -20,8 +20,7 @@ import com.animals.models.PublicacionModel;
 public class PublicacionController {
 	@Autowired
 	PublicacionDAO postDao;
-	@Autowired
-	AnimalDAO animalDao;
+
 
 	@GetMapping("/listarPublicaciones")
 	@ResponseBody
@@ -61,6 +60,15 @@ public class PublicacionController {
 			throw new NotFoundException();
 		}
 		postDao.delete(postDao.getById(id));
+	}
+	
+	@DeleteMapping("/borrarPorUsu/{nombreUsuario}")
+	@ResponseBody
+	public void borrarPublicacionPorUsu(@PathVariable String nombreUsuario) throws NotFoundException {
+		if (nombreUsuario.equals("")) {
+			throw new NotFoundException();
+		}
+		postDao.deletePostsUsu(nombreUsuario);
 	}
 
 	@PutMapping("/editarPublicacion/{id}")

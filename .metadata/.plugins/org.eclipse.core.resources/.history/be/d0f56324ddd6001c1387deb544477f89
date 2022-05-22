@@ -1,0 +1,31 @@
+package com.animals.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.animals.DAO.ChatDAO;
+import com.animals.models.ChatModel;
+
+import DTO.ChatDTO;
+
+
+@RestController
+public class ChatController {
+
+	@Autowired 
+	ChatDAO chatDao;
+    @MessageMapping("/resume")
+    @SendTo("/start/initial")
+    public String chat(ChatModel msg) {
+        System.out.println(msg.getUsuarioOrigen());
+        System.out.println(msg.getUsuarioDestinatario());
+        ChatModel chat = new ChatModel();
+        chat.setUsuarioOrigen(msg.getUsuarioOrigen());
+        chat.setUsuarioDestinatario(msg.getUsuarioDestinatario());
+        chat.setMensaje(msg.getMensaje());
+        chatDao.create(chat);
+        return msg.getUsuarioOrigen()+" "+ msg.getMensaje();
+    }
+}

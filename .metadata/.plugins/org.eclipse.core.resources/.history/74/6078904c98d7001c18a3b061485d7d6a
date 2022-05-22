@@ -1,0 +1,28 @@
+package com.animals.models;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ChatModel {
+	private String usuarioOrigen;
+	private String usuarioDestinatario;
+	private String mensaje;
+
+	private String fecha= dataformatter() ;
+	
+	private String dataformatter(){
+		Date now = new Date();
+		String pattern = "yyyy-MM-dd H:m:s";
+		SimpleDateFormat formatter = new SimpleDateFormat(pattern);
+		return formatter.format(now);
+
+	}
+
+}

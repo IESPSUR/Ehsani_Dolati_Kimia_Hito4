@@ -40,6 +40,11 @@ public class SolicitudAnimalDAO {
         session.disableFilter("deletedPostFilter");
 		return lista;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<SolicitudAnimalModel> getAllForAdmin() {
+		return entityManager.createQuery(" from solicitudAnimal ").getResultList();
+	}
 
 	@SuppressWarnings("unchecked")
 	public List<SolicitudAnimalModel> getSolicitudesDeUnUsuario(String nombreUsuario) {

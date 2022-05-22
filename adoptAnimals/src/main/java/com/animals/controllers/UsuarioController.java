@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.animals.DAO.PublicacionDAO;
 import com.animals.DAO.UsuarioDAO;
 import com.animals.models.UsuarioModel;
 
@@ -23,11 +24,12 @@ import com.animals.models.UsuarioModel;
 public class UsuarioController {
 	@Autowired
 	UsuarioDAO userDao;
+	
 
 	@GetMapping("/listarUsuarios")
 	@ResponseBody
 	public List<UsuarioModel> listarUsuarios() {
-		return userDao.getAll();
+		return userDao.getAllForAdmin();
 	}
 	
 	@GetMapping("/listarUsuarios/{nombreUsuario}")
@@ -75,6 +77,7 @@ public class UsuarioController {
 			throw new NotFoundException();
 		}
 		userDao.delete(userDao.getByNombreUsuario(nombreUsuario));
+		
 	}
 
 	@PutMapping("/editarUsuario/{nombreUsuario}")

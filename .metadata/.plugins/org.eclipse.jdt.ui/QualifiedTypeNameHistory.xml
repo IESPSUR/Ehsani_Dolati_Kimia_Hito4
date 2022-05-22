@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.hibernate.annotations.ForeignKey"/>
-    <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
-    <fullyQualifiedTypeName name="javax.persistence.ForeignKey"/>
-    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
-    <fullyQualifiedTypeName name="com.animals.DAO.SolicitudAnimalDAO"/>
-    <fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.CorsRegistry"/>
-    <fullyQualifiedTypeName name="java.security.MessageDigest"/>
-    <fullyQualifiedTypeName name="javax.xml.bind.DatatypeConverter"/>
-    <fullyQualifiedTypeName name="com.animals.DAO.ImageDAO"/>
-    <fullyQualifiedTypeName name="com.animals.models.UsuarioModel"/>
-    <fullyQualifiedTypeName name="com.animals.models.PublicacionModel"/>
-    <fullyQualifiedTypeName name="org.apache.tomcat.util.http.fileupload.IOUtils"/>
-    <fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
-    <fullyQualifiedTypeName name="java.io.InputStream"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="java.net.URL"/>
     <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
@@ -23,21 +8,17 @@
     <fullyQualifiedTypeName name="org.springframework.util.MultiValueMapAdapter"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="org.springframework.http.HttpHeaders"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.hibernate.annotations.CreationTimestamp"/>
     <fullyQualifiedTypeName name="javax.persistence.Temporal"/>
     <fullyQualifiedTypeName name="javax.persistence.TemporalType"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="java.time.Instant"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
     <fullyQualifiedTypeName name="com.animals.models.ComentarioModel"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
     <fullyQualifiedTypeName name="com.animals.models.AnimalModel"/>
     <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
     <fullyQualifiedTypeName name="com.animals.DAO.AnimalDAO"/>
-    <fullyQualifiedTypeName name="com.animals.DAO.PublicacionDAO"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
     <fullyQualifiedTypeName name="springfox.documentation.spring.web.plugins.Docket"/>
     <fullyQualifiedTypeName name="springfox.documentation.spi.DocumentationType"/>
@@ -52,7 +33,6 @@
     <fullyQualifiedTypeName name="org.springframework.context.support.ResourceBundleMessageSource"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Description"/>
     <fullyQualifiedTypeName name="org.thymeleaf.spring5.SpringTemplateEngine"/>
-    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="com.animals.models.contactModel"/>
     <fullyQualifiedTypeName name="org.springframework.ws.mime.MimeMessage"/>
     <fullyQualifiedTypeName name="org.springframework.mail.javamail.MimeMessageHelper"/>
@@ -60,4 +40,24 @@
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="com.animals.models.SolicitudAnimalEmailModel"/>
+    <fullyQualifiedTypeName name="springfox.documentation.service.ResponseMessage"/>
+    <fullyQualifiedTypeName name="org.springframework.core.io.Resource"/>
+    <fullyQualifiedTypeName name="responses.ServeFileResponse"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+    <fullyQualifiedTypeName name="DTO.ChatDTO"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.animals.DAO.ChatDAO"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.animals.models.UsuarioModel"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="javax.persistence.Column"/>
+    <fullyQualifiedTypeName name="com.animals.models.ChatModel"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="com.animals.DTO.DeleteUserInformEmail"/>
+    <fullyQualifiedTypeName name="com.animals.DAO.PublicacionDAO"/>
+    <fullyQualifiedTypeName name="com.animals.controllers.PublicacionController"/>
 </qualifiedTypeNameHistroy>

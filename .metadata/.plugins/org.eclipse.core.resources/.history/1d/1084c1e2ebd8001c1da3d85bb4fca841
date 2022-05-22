@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Template</title>
+</head>
+<body>
+
+<h1 th:text="${'Hello ' +nombreUsuario + ', We have deleted your account.'}"> </h1>
+
+<h2 th:text="${'This email is to inform you that your account has ben deleted by the administrators of our organization for some reasons.'}"></h2>
+
+<p th:text="${'Here you have the administrators message to you: '}">Here you have the administrators message to you: <b th:text="${mensaje}"></b></p>
+
+<p><b th:text="${'If you want to communicate with this person, you have his/her email: ' +correo}" ></b></p>
+
+</body>
+</html>

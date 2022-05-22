@@ -24,7 +24,7 @@ public class SolicitudAnimalController {
 	@GetMapping("/listarSolicitudes")
 	@ResponseBody
 	public List<SolicitudAnimalModel> listarSolicitudes() {
-		return requestDao.getAll();
+		return requestDao.getAllForAdmin();
 	}
 
 	@GetMapping("/listarSolicitudesDeUnUsuario/{nombreUsuario}")

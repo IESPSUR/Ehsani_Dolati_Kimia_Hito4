@@ -1,0 +1,22 @@
+package com.animals.controllers;
+
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.animals.models.ChatModel;
+
+import DTO.ChatDTO;
+
+
+@RestController
+public class ChatController {
+
+    @MessageMapping("/resume")
+    @SendTo("/start/initial")
+    public String chat(ChatDTO msg) {
+        System.out.println(msg.getUser());
+        System.out.println(msg.getMessage());
+        return msg.getUser()+" "+ msg.getMessage();
+    }
+}

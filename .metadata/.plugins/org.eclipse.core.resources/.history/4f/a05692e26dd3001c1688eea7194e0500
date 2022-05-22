@@ -1,9 +1,0 @@
-package com.animals;
-
-@Configuration
-public class SwaggerConfig {
-	
-	
-
-	
-}

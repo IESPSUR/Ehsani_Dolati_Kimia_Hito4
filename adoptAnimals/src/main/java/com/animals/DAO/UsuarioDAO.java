@@ -19,7 +19,11 @@ public class UsuarioDAO {
 	         entityManager.persist(user);
 	         return user;
 	    }
-	
+	   
+	   @SuppressWarnings("unchecked")
+		public List<UsuarioModel> getAllForAdmin() {
+	    	return (List<UsuarioModel>) entityManager.createQuery(" from usuarios where tipo != 'admin'").getResultList();
+	    }
 	   
 	    @SuppressWarnings("unchecked")
 		public List<UsuarioModel> getAll() {
