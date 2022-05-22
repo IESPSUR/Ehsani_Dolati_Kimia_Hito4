@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { lastValueFrom, map } from 'rxjs';
 import { CommentDTO } from '../DTO/CommentDTO';
+import { ImageUserPost } from '../DTO/ImagenUserPost';
+import { ImagePost } from '../DTO/ImagePost';
 import { PostDTO } from '../DTO/PostDTO';
 import { RequestDTO } from '../DTO/RequestDTO';
 import { AnimalService } from '../services/animal.service';
@@ -18,9 +20,11 @@ import { PostService } from '../services/post.service';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit {
+export class PostComponent implements OnInit, AfterViewInit {
 
   public posts: Array<any>;
+  public postsMostrados: Array<any>;
+  public postsTemporal: Array<any>;
   public post: PostDTO;
   public estadoSolicitud: string = "Request";
   public commentForm: FormGroup;
@@ -33,27 +37,31 @@ export class PostComponent implements OnInit {
   public imagePost: SafeResourceUrl;
   public imagePostUser: SafeResourceUrl;
   public opcionSeleccionado: string;
+  public postsImages: Array<ImagePost>;
+  public usersPostsImages: Array<ImageUserPost>;
+  public cont: number = 0;
 
-  constructor(private _animalService: AnimalService, private actRout: ActivatedRoute, private _sanitizer: DomSanitizer, private _postService: PostService, private _commentService: CommentService, public _authService: AuthenticationService, public _imageService: ImageService, public fb: FormBuilder, private _router: Router) {
+  constructor(private _animalService: AnimalService, private actRout: ActivatedRoute, private _sanitizer: DomSanitizer, private _postService: PostService, private _commentService: CommentService, public _authService: AuthenticationService, public _imageService: ImageService, public fb: FormBuilder, public _router: Router) {
     this.posts = [];
+    this.postsMostrados = [];
+    this.postsTemporal = [];
+    this.postsImages = [];
+    this.usersPostsImages = [];
     this.id = this.actRout.snapshot.params['id'];
     this.nombreUsuario = this.actRout.snapshot.params['nombreUsuario'];
     this.opcionSeleccionado = "type";
+  }
 
+  ngAfterViewInit() {
+    $("#selecttype").val("type");
+    this.opcionSeleccionado = "type";
   }
 
   ngOnInit(): void {
-
-    if (this.id) {
-      this.getImagen(this.id.toString());
-      this.imagePost = this.imagenTemp;
-    }
-    /*
-    if(this.nombreUsuario){
-      this.imagePostUser=this.getImagen(this.id);
-    }*/
     this.obtenerPosts(sessionStorage.getItem("nombreUsuario") || "");
-    this.getImagen();
+    if (this._authService.isAuth()) {
+      this.getImagen();
+    }
     this.imagenUsu = this.imagenTemp;
     this.commentForm = this.fb.group({
       comment: new FormControl('', [Validators.required])
@@ -61,8 +69,32 @@ export class PostComponent implements OnInit {
   }
 
 
+  add2LinesPosts() {
+    var i: number = this.postsMostrados.length;
+    var cont: number = 0;
+    while (cont <= 2 && this.postsTemporal[i]) {
+      this.postsMostrados.push(this.postsTemporal[i]);
+      if (!this.existsImagePost(this.postsTemporal[i].id)) {
+        this.getImagen(this.postsTemporal[i].id + "");
+      }
+      if (!this.existsImagePostUser(this.postsTemporal[i].nombreUsuario.nombreUsuario)) {
+        this.getImagen(this.postsTemporal[i].nombreUsuario.nombreUsuario);
+      }
+      cont++;
+      i++;
+    }
+  }
+
+  private existsImagePostUser(nombreUsuario: string) {
+    return this.usersPostsImages.find(im => im.nombreUsuario == nombreUsuario);
+  }
+  private existsImagePost(idPost: number) {
+    return this.postsImages.find(im => im.id == idPost);
+  }
+
   private obtenerPosts(nombreUsuario?: string) {
     $(".spinner").removeClass("d-none");
+   
     if (this.id) {
       this._postService.getPost(this.id).subscribe(data => {
         $(".spinner").addClass("d-none");
@@ -71,25 +103,41 @@ export class PostComponent implements OnInit {
             return this.animal = data;
           })
         }
-        return this.posts.push(data);
+        this.posts.push(data);
+        this.getImagen(this.id.toString());
+        this.getImagen(this.posts.filter(post => post.id == this.id)[0].nombreUsuario.nombreUsuario);
+        // this.imagePost = this.imagenTemp;
+        return this.posts;
       })
+
     } else {
       if (this.nombreUsuario) {
         this._postService.obtenerUserPosts(this.nombreUsuario).subscribe(data => {
           $(".spinner").addClass("d-none");
-          return this.posts = data;
+          this.posts = data;
+          return this.posts;
         })
       } else {
         if (this._router.url == "/adminPosts") {
           $(".spinnerAdmin").removeClass("d-none");
           this._postService.obtenerAdminPosts().subscribe(data => {
             $(".spinnerAdmin").addClass("d-none");
-            return this.posts = data;
+            this.posts = data;
+            this.postsTemporal = this.posts;
+            this.add2LinesPosts();
+            return this.posts;
           })
-        } else {
+        } else if(this._authService.isAdmin()){
+          this._postService.obtener().subscribe(data => {
+            $(".spinner").addClass("d-none");
+            this.posts = data;
+            return this.posts;
+          })
+        }else{
           this._postService.obtener(nombreUsuario).subscribe(data => {
             $(".spinner").addClass("d-none");
-            return this.posts = data;
+            this.posts = data;
+            return this.posts;
           })
         }
       }
@@ -109,12 +157,30 @@ export class PostComponent implements OnInit {
       this.imagenTemp = this._sanitizer.bypassSecurityTrustResourceUrl(e.target.result);
       if (!nombreUsuOIdPub) {
         this.imagenUsu = this.imagenTemp;
-      }else{
-        this.imagePost=this.imagenTemp;
+      } else {
+        if (this.id) {
+          if (nombreUsuOIdPub.match(/^[0-9]+$/)) {
+            this.imagePost = this.imagenTemp;
+          } else {
+            this.imagePostUser = this.imagenTemp;
+          }
+        } else {
+          this.imagePost = this.imagenTemp;
+          if (nombreUsuOIdPub.match(/^[0-9]+$/)) {
+            if (!this.existsImagePost(parseInt(nombreUsuOIdPub))) {
+              this.postsImages.push(new ImagePost(parseInt(nombreUsuOIdPub), this.imagePost));
+            }
+          } else {
+            if (!this.existsImagePostUser(nombreUsuOIdPub)) {
+              this.usersPostsImages.push(new ImageUserPost(nombreUsuOIdPub, this.imagePost));
+            }
+          }
+        }
+
       }
     }
     reader.readAsDataURL(new Blob([res]));
-    
+
 
   }
 
@@ -139,4 +205,30 @@ export class PostComponent implements OnInit {
   public esAdminPosts(): boolean {
     return this._router.url == "/adminPosts";
   }
+
+  public buscarPosImagen(idPost: number): number {
+    var i = this.postsImages.findIndex(post => post.id == idPost);
+    return i;
+  }
+
+  public buscarPosUserImagen(nombreUsuario: string): number {
+    var i = this.usersPostsImages.findIndex(post => post.nombreUsuario == nombreUsuario);
+    return i;
+  }
+
+  public cambiartipoMostrar() {
+    this.postsMostrados = [];
+    this.postsTemporal = this.posts.filter(post => post.tipo == this.opcionSeleccionado);
+    this.add2LinesPosts();
+  }
+
+  public borrarPost(id:number){
+    this._postService.deletePost(id).subscribe(data=>{
+      this._router.navigate(['/posts/']);
+    });
+  }
+
 }
+
+
+

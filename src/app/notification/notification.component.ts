@@ -8,7 +8,10 @@ import { FollowDTO } from '../DTO/FollowDTO';
 import { RequestDTO } from '../DTO/RequestDTO';
 import { EmailService } from '../services/email.service';
 import * as bootstrap from 'bootstrap';
-declare var $ :any;
+import { ImageUserPost } from '../DTO/ImagenUserPost';
+import { DomSanitizer } from '@angular/platform-browser';
+import { ImageService } from '../services/image.service';
+declare var $: any;
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',
@@ -18,10 +21,11 @@ export class NotificationComponent implements OnInit {
   public opcionSeleccionado: number = 0;
   public post: PostDTO;
   public notifications: Array<any>;
-  public adopciones: Array<any>;
+  public imagesNotfs: Array<ImageUserPost>;
 
-  constructor(private _emailService: EmailService, private _postService: PostService, private _adoptReqService: AdoptionRequestsService, private _followService: FollowsService) {
+  constructor(private _sanitizer: DomSanitizer, private _imageService: ImageService, private _emailService: EmailService, private _postService: PostService, private _adoptReqService: AdoptionRequestsService, private _followService: FollowsService) {
     this.notifications = [];
+    this.imagesNotfs = [];
   }
 
   ngOnInit(): void {
@@ -42,14 +46,18 @@ export class NotificationComponent implements OnInit {
   }
 
   public obtenerLista() {
-
+    this.imagesNotfs=[];
+    this.notifications=[];
     if (this.opcionSeleccionado == 1) {
       this._followService.followers(sessionStorage.getItem("nombreUsuario") || "").subscribe(data => {
-        return this.notifications = data;
+        this.notifications = data;
+        this.getImagesUsuNotf();
       })
     } else {
       this._adoptReqService.getSolicitudesDeUnUsuario().subscribe(data => {
-        return this.notifications = data;
+        this.notifications = data;
+        this.getImagesUsuNotf();
+
       })
     }
   }
@@ -66,5 +74,33 @@ export class NotificationComponent implements OnInit {
     this.notifications.splice(posSolicitud, 1);
   }
 
+  getImagesUsuNotf() {
+    this.notifications.forEach(notf => {
+      if(!notf.nombreUsuario){
+        this.getImagen(notf.toString(), true);
+      }else{
+        this.getImagen(notf.nombreUsuario.nombreUsuario, true);
+      }
+    });
+  }
+
+  public getImagen(nombreUsu?: string, notf?: boolean): any {
+    this._imageService.viewImage(nombreUsu ? nombreUsu : "").subscribe(
+      res => {
+        const reader = new FileReader();
+        reader.onload = (e: any) => {
+          var image = this._sanitizer.bypassSecurityTrustResourceUrl(e.target.result);
+          this.imagesNotfs.push(new ImageUserPost(nombreUsu || "", image));
+
+        }
+        reader.readAsDataURL(new Blob([res]));
+      }
+    );
+  }
+
+  public buscarImageIndice(nombreUsu: string): number {
+    return this.imagesNotfs.findIndex(i => i.nombreUsuario == nombreUsu);
+
+  }
 
 }

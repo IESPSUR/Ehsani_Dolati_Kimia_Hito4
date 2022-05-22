@@ -9,7 +9,7 @@
     <div *ngIf="!notifications">There is no notificatione yet</div>
     <div class="py-5 px-5" *ngFor="let notification of notifications">
         <div class="row" *ngIf="opcionSeleccionado==1">
-            <div class="col-2"><a href="/users/{{notification}}"><img class="rounded-circle mx-3" src="../../assets/profile.jpeg" width="60px"
+            <div class="col-2"><a href="/users/{{notification}}"><img class="rounded-circle mx-3" [src]="imagesNotfs[buscarImageIndice(notification)].image" width="60px"
                     height="60px"></a></div>
             <div class="col-7 d-flex align-items-center">{{notification}} has followed you
             </div>
@@ -18,7 +18,7 @@
         </div>
 
         <div class="row" *ngIf="opcionSeleccionado==2">
-            <div class="col-2"><a href="/users/{{notification.nombreUsuario.nombreUsuario}}"><img class="rounded-circle mx-3" src="../../assets/profile.jpeg" width="60px"
+            <div class="col-2"><a href="/users/{{notification.nombreUsuario.nombreUsuario}}"><img class="rounded-circle mx-3" [src]="imagesNotfs[buscarImageIndice(notification.nombreUsuario.nombreUsuario)].image" width="60px"
                     height="60px"></a></div>
             <div class="col-7 d-flex align-items-center">{{notification.nombreUsuario.nombreUsuario}} has applied for
                 your animal with DNI <a href="/posts/{{notification.animalesDNI.publicaciones_id.id}}">

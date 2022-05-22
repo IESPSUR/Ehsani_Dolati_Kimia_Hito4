@@ -1,0 +1,24 @@
+<div class="container py-5">
+
+    <table class="table table-striped  ">
+        <thead class="thead-dark">
+            <tr>
+                <th>User</th>
+                <th>Animal DNI</th>
+                <th>Owner</th>
+                <th>Date</th>
+                <th>Estatus</th>
+
+            </tr>
+        </thead>
+        <tbody *ngFor="let adoption of adoptions">
+            <tr>
+                <td><a href="/users/{{adoption.nombreUsuario.nombreUsuario}}">{{adoption.nombreUsuario.nombreUsuario}}</a></td>
+                <td><a href="/posts/{{adoption.animalesDNI.publicaciones_id.id}}">{{adoption.animalesDNI.dni}}</a></td>
+                <td><a href="/users/{{adoption.animalesDNI.publicaciones_id.nombreUsuario.nombreUsuario}}">{{adoption.animalesDNI.publicaciones_id.nombreUsuario.nombreUsuario}}</a></td>
+                <td>{{adoption.fecha}}</td>
+                <td>{{adoption.estado}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

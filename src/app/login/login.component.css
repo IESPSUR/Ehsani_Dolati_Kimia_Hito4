@@ -13,3 +13,7 @@ a{
     text-decoration: none;
     color: aliceblue;
 }
+
+.text-danger{
+    color: rgb(250, 84, 84)!important;
+}

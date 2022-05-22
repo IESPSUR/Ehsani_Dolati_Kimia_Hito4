@@ -1,5 +1,7 @@
 
-
+a{
+    text-decoration: none;
+}
 footer div:first{
     background-color: rgb(48, 47, 47)!important;
 }

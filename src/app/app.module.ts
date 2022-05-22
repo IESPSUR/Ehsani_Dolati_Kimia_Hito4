@@ -17,6 +17,8 @@ import { FollowsComponent } from './follows/follows.component';
 import { PostFormComponent } from './post-form/post-form.component';
 import { ContactComponent } from './contact/contact.component';
 import { ChatComponent } from './chat/chat.component';
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { AdoptionsComponent } from './adoptions/adoptions.component';
 
 
 @NgModule({
@@ -32,14 +34,16 @@ import { ChatComponent } from './chat/chat.component';
     FollowsComponent,
     PostFormComponent,
     ContactComponent,
-    ChatComponent
+    ChatComponent,
+    AdoptionsComponent
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InfiniteScrollModule
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

@@ -18,7 +18,7 @@
                 required</span>
 
         </div>
-        <div class=" position-relative">
+        <div class=" position-relative" *ngIf="!_authService.isAdmin()">
             <label for="tipo" class="form-label">Select the reason of this post</label>
             <select id="tipo" value=post.tipo [(ngModel)]="selectedType" (change)="cargarComponentes()" formControlName="tipo"
                 type="text" class="form-control">

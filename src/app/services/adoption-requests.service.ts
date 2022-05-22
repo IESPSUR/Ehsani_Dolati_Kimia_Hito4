@@ -11,6 +11,7 @@ export class AdoptionRequestsService {
   protected endpointGetSolicitudesUsu:string = environment.url_back + '/listarSolicitudesDeUnUsuario/';
   protected endpointResponderSolicitud:string = environment.url_back + '/responderSolicitud/';
   protected endpointGetAdoptedAnimals:string = environment.url_back + '/listarAnimalesAceptados/';
+  protected endpointGetAllAdoptedAnimals:string = environment.url_back + '/listarSolicitudes/';
 
   constructor(private http:HttpClient) { }
 
@@ -24,5 +25,9 @@ export class AdoptionRequestsService {
 
   getAdoptedAnimals(): Observable<any>{
     return this.http.get(this.endpointGetAdoptedAnimals );
+  }
+
+  getAllAdoptedAnimals(): Observable<any>{
+    return this.http.get(this.endpointGetAllAdoptedAnimals );
   }
 }

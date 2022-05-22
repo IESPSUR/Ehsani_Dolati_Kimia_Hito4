@@ -6,8 +6,10 @@ import { FollowDTO } from '../DTO/FollowDTO';
 import { UserDTO } from '../DTO/UserDTO';
 import { AdoptionRequestsService } from '../services/adoption-requests.service';
 import { AuthenticationService } from '../services/authentication.service';
+import { EmailService } from '../services/email.service';
 import { FollowsService } from '../services/follows.service';
 import { ImageService } from '../services/image.service';
+import { PostService } from '../services/post.service';
 import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-user',
@@ -25,8 +27,11 @@ export class UserComponent implements OnInit {
   public file: File;
   public adoptedAnimals: Array<any>;
   public respuestaImagen: any;
+  public usuarioParaBorrar: string;
+  public dltUserReason: string;
+  public usuarioCorreoParaBorrar: string;
 
-  constructor(private _adoptionService: AdoptionRequestsService, private _sanitizer: DomSanitizer, public _imageService: ImageService, private _followService: FollowsService, private _userService: UserService, private _router: Router, private actRout: ActivatedRoute, public _authService: AuthenticationService) {
+  constructor(private _postservice: PostService, private _emailService: EmailService, private _adoptionService: AdoptionRequestsService, private _sanitizer: DomSanitizer, public _imageService: ImageService, private _followService: FollowsService, private _userService: UserService, public _router: Router, private actRout: ActivatedRoute, public _authService: AuthenticationService) {
     this.nombreUsuario = this.actRout.snapshot.params['nombreUsuario'];
   }
 
@@ -75,12 +80,19 @@ export class UserComponent implements OnInit {
 
   }
 
-  public deleteAccount() {
-    this._userService.delete().subscribe(data => {
-      sessionStorage.removeItem("nombreUsuario");
-      this._router.navigate(['/login/']);
-    });
-
+  public deleteAccount(nombreUsuario?: string) {
+    if (nombreUsuario) {
+      this._postservice.deletePostUser(nombreUsuario).subscribe();
+      this._userService.delete(nombreUsuario).subscribe(data => {
+        this._emailService.createSendEmailRequestBorrarUsu({ correoDeUsu: this.usuarioCorreoParaBorrar, mensajeAdmin: this.dltUserReason, nombreUsuario: this.usuarioParaBorrar }).subscribe();
+        this.users.splice(this.users.findIndex(us => us.nombreUsuario == this.usuarioParaBorrar), 1);
+      });
+    } else {
+      this._userService.delete(sessionStorage.getItem("nombreUsuario") || "").subscribe(data => {
+        sessionStorage.removeItem("nombreUsuario");
+        this._router.navigate(['/login/']);
+      });
+    }
   }
 
   public async getImagen(nombreUsuOIdPub?: string) {
@@ -88,13 +100,11 @@ export class UserComponent implements OnInit {
     const reader = new FileReader();
     reader.onload = (e: any) => {
       this.imagenTemp = this._sanitizer.bypassSecurityTrustResourceUrl(e.target.result);
-      if (!nombreUsuOIdPub) {
-        this.imagenUsu = this.imagenTemp;
-      }
+      this.imagenUsu = this.imagenTemp;
     }
-    
+
     reader.readAsDataURL(new Blob([res]));
-    
+
 
   }
 
@@ -102,7 +112,7 @@ export class UserComponent implements OnInit {
   public cambiarImagen(event: Event) {
     this.actualizarImagen(event);
     this.getImagen();
-    window.location.reload();
+    //window.location.reload();
   }
 
   public async actualizarImagen(event: Event) {
@@ -114,6 +124,12 @@ export class UserComponent implements OnInit {
   public getAdoptedAnimals() {
     this._adoptionService.getAdoptedAnimals().subscribe(data => {
       this.adoptedAnimals = data;
+      this.adoptedAnimals=this.adoptedAnimals.filter(ad=>ad.animalesDNI.publicaciones_id.nombreUsuario.nombreUsuario == this.nombreUsuario);
     });
+  }
+
+  public guardarUsuario(nombreUsuario: string, correoUsu: string) {
+    this.usuarioParaBorrar = nombreUsuario;
+    this.usuarioCorreoParaBorrar = correoUsu;
   }
 }

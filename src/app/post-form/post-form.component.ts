@@ -9,6 +9,7 @@ import { AnimalService } from '../services/animal.service';
 
 import * as $ from "jquery";
 import { AnimalDTO } from '../DTO/AnimalDTO';
+import { AuthenticationService } from '../services/authentication.service';
 @Component({
   selector: 'app-post-form',
   templateUrl: './post-form.component.html',
@@ -19,11 +20,11 @@ export class PostFormComponent implements OnInit {
   public id: number;
   public postForm: FormGroup;
   public post: PostDTO;
-  public selectedType: string;
+  public selectedType: string='noticia';
   public animal: any = null;
   public title: string = "Create a new post";
 
-  constructor(private _router: Router, private actRout: ActivatedRoute, public fb: FormBuilder, private _animalService: AnimalService, private _postService: PostService, public _imageService: ImageService) {
+  constructor(public _authService:AuthenticationService,private _router: Router, private actRout: ActivatedRoute, public fb: FormBuilder, private _animalService: AnimalService, private _postService: PostService, public _imageService: ImageService) {
     this.id = this.actRout.snapshot.params['id'];
     if (this.id) {
       this.title = "Edit your post";
@@ -58,7 +59,7 @@ export class PostFormComponent implements OnInit {
         nombreUsuario: sessionStorage.getItem("nombreUsuario"),
         id: this.id ? this.id: null
       });
-      if(this.post.tipo=="animal"){
+      if(this.selectedType=="animal"){
         this.procesarFormAnimal();
       }
   }

@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   public user:LoginDTO;
   public loginForm:FormGroup;
   public title:string = "Login";
+  public loginFallo:boolean=false;
 
   constructor(private _router: Router,private _userService: UserService,public fb:FormBuilder) {
   }
@@ -34,10 +35,10 @@ export class LoginComponent implements OnInit {
          sessionStorage.setItem("nombreUsuario",this.user.nombreUsuario);
          sessionStorage.setItem("tipo",this.user.tipo);
          this._router.navigate(['/posts/']);
-
          return this.user;
       }else{
-        return this.user ;
+        this.loginFallo=true; 
+        return this.user;
       }
     })
    

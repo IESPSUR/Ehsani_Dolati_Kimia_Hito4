@@ -39,8 +39,8 @@ export class UserService {
   }
 
 
-  delete(): Observable<any>{
-    return this.http.delete(this.endpointDelete+sessionStorage.getItem("nombreUsuario"));
+  delete(nombreUsuario:string): Observable<any>{
+    return this.http.delete(this.endpointDelete+nombreUsuario);
   }
 
   update(user:UserDTO):Observable<any>{

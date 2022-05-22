@@ -19,12 +19,16 @@ export class PostService {
   protected endpointCreate: string = environment.url_back + '/crearPublicacion/';
   protected endpointGetPost: string = environment.url_back + '/listarPublicaciones/';
   protected endpointGetUserPosts: string = environment.url_back + '/listarPublicacionesUsuario/';
+  protected endpointDeletePostUser: string = environment.url_back + '/borrarPorUsu/';
+  protected endpointDeletePost: string = environment.url_back + '/borrarPublicacion/';
+
+  
 
   constructor(private http: HttpClient) {
   }
 
   obtener(nombreUsuario?: string): Observable<any> {
-    if (nombreUsuario == "") {
+    if (!nombreUsuario ) {
       return this.http.get(this.endpointPosts);
     } else {
       return this.http.get(this.endpointFollowingsPost + nombreUsuario);
@@ -57,5 +61,13 @@ export class PostService {
 
   getPost(id: number): Observable<any> {
     return this.http.get(this.endpointGetPost + id);
+  }
+
+  deletePostUser(nombreUsu:string): Observable<any> {
+    return this.http.delete(this.endpointDeletePostUser + nombreUsu);
+  }
+
+  deletePost(id:number): Observable<any> {
+    return this.http.delete(this.endpointDeletePost + id);
   }
 }

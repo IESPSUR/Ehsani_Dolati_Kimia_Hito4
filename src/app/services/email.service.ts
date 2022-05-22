@@ -8,9 +8,10 @@ import { environment } from 'src/environments/environment';
 })
 export class EmailService {
 
+  protected endpointCrearEnviarEmailBorrarUsu:string = environment.url_back + '/crearEnviarEmailBorrarUsu/';
   protected endpointCrearEnviarEmail:string = environment.url_back + '/crearEnviarEmail/';
   protected endpointCrearEnviarEmailRequest:string = environment.url_back + '/crearEnviarEmailRequest/';
-
+  
 
   constructor(private http:HttpClient ) {
   }
@@ -21,6 +22,10 @@ export class EmailService {
 
   createSendEmailRequest(emailDetails:any): Observable<any>{
     return this.http.post(this.endpointCrearEnviarEmailRequest,emailDetails);
+  }
+
+  createSendEmailRequestBorrarUsu(emailDetails:any): Observable<any>{
+    return this.http.post(this.endpointCrearEnviarEmailBorrarUsu,emailDetails);
   }
 
 }

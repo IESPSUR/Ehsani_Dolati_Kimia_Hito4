@@ -12,3 +12,27 @@ body{
     min-height: 788px
 }
 
+nav{
+    order:2;
+}
+
+
+#sideBar li.nav-item a{
+    background-color: rgba(10, 65, 53, 0.89)!important ;
+    color: rgb(255, 255, 255)!important ;
+
+}
+#sideBar .fas{
+    font-size: x-large!important;
+}
+
+
+#sideBar a{
+    color: black;
+}
+
+#menuSideBar{
+    top: 0.50rem;
+    right: 1rem;
+    border: none;
+}

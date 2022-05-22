@@ -7,6 +7,8 @@ import { ImageService } from '../services/image.service';
 import { UserService } from '../services/user.service';
 import * as bootstrap from 'bootstrap';
 declare var $ :any;
+
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',

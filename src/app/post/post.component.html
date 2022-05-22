@@ -1,20 +1,26 @@
-<div class="containerComponentes container px-5 py-5">
-    <div class="spinnerAdmin d-none"><img src="./assets/loading.gif" width="120px" class="position-relative start-50 top-50" ></div>
+<div class="containerComponentes container px-5 py-5" infiniteScroll [infiniteScrollDistance]="3"
+    (scrolled)="add2LinesPosts()">
+    <div class="spinnerAdmin d-none"><img src="./assets/loading.gif" width="120px"
+            class="position-relative start-50 top-50"></div>
 
 
     <ng-container *ngIf=" id ; else noId">
         <div *ngFor="let post of posts">
             <div *ngIf="post.id==id">
                 <div class="row py-3">
-                    <div class="col"><a href="/users/{{post.nombreUsuario.nombreUsuario}}"><img
-                                class="rounded-circle mx-3" src="../../assets/profile.jpeg" width="60px"
+                    <div class="col "><a href="/users/{{post.nombreUsuario.nombreUsuario}}"><img
+                                class="rounded-circle mx-3" [src]="imagePostUser" width="60px"
                                 height="60px"></a><b>{{post.nombreUsuario.nombreUsuario}}</b></div>
-                    <div class="col" *ngIf="esMiPost(post.nombreUsuario.nombreUsuario)"><a class="btn btn-primary"
-                            href="/editPost/{{id}}">Edit</a></div>
+                    <div class="col text-center py-2 h4"><a *ngIf="esMiPost(post.nombreUsuario.nombreUsuario)"
+                            href="/editPost/{{id}}"><i class="fa fa-edit"></i></a><a
+                            *ngIf="_authService.isAdmin() || esMiPost(post.nombreUsuario.nombreUsuario)"
+                            data-bs-toggle="modal" data-bs-target="#ModalPostDelete" class=" mx-4"><i
+                                class="fa fa-trash" aria-hidden="true"></i>
+                        </a></div>
                 </div>
                 <div class="row py-3">
                     <h5><a href="/posts/{{post.id}}">{{post.cabecera}}</a></h5> <button
-                        *ngIf="post.tipo=='animal' && _authService.isAuth() && !esMiPost(post.nombreUsuario.nombreUsuario)"
+                        *ngIf="post.tipo=='animal' && _authService.isAuth() && !_authService.isAdmin() && !esMiPost(post.nombreUsuario.nombreUsuario)"
                         (click)="solicitarAnimal(post.id)"
                         [disabled]="estadoSolicitud=='Requested' ? 'disabled' : null">{{estadoSolicitud}}</button>
                     <p class="px-5 py-2">{{post.contenido}}</p><img class="px-5" [src]=imagePost>
@@ -49,8 +55,9 @@
     </ng-container>
     <ng-template #noId>
         <div class="row">
-            <div class="col-8"><select *ngIf="!esAdminPosts()" class="form-select form-select-lg mb-3"
-                    aria-label=".form-select-lg example" [(ngModel)]="opcionSeleccionado">
+            <div class="col-8"><select *ngIf="!esAdminPosts()" class="form-select form-select-lg mb-3" id="selecttype"
+                    aria-label=".form-select-lg example" [(ngModel)]="opcionSeleccionado"
+                    (change)="cambiartipoMostrar()">
                     <option value="type">Select the type</option>
                     <option value="animal">Adoptions</option>
                     <option value="noticia">News</option>
@@ -59,28 +66,38 @@
                     style="color: aliceblue!important" href="/createPost/">Create
                     a new post</a></div>
         </div>
-        <div class="spinner d-none"><img src="./assets/loading.gif" width="120px" class="position-relative start-50 top-50" ></div>
+        <div class="spinner d-none"><img src="./assets/loading.gif" width="120px"
+                class="position-relative start-50 top-50"></div>
 
         <ng-container *ngIf="existsPosts() ; else noPosts">
             <ng-container *ngIf="opcionSeleccionado != 'type'  || esAdminPosts()">
-                <div class="containerPost py-3" *ngFor="let post of posts">
-                    <ng-container *ngIf="post.tipo == opcionSeleccionado || esAdminPosts()">
+                <div class="containerPost py-3" *ngFor="let post of postsMostrados">
+                    <ng-container *ngIf="post.nombreUsuario.tipo!='admin' || _router.url=='/adminPosts'">
                         <div class="row py-3">
                             <div class="col"><a *ngIf="_authService.isAuth()"
-                                    href="/users/{{post.nombreUsuario.nombreUsuario}}"><img class="rounded-circle mx-3"
-                                        src="../../assets/profile.jpeg" width="60px" height="60px"></a>
+                                    href="/users/{{post.nombreUsuario.nombreUsuario}}">
+                                    <img class="rounded-circle mx-3"
+                                        [src]="usersPostsImages[buscarPosUserImagen(post.nombreUsuario.nombreUsuario)].image"
+                                        width="60px" height="60px">
+                                </a>
 
                                 <a *ngIf="_authService.isAuth()==false" href="#"><img class="rounded-circle mx-3"
-                                        src="../../assets/profile.jpeg" width="60px" height="60px"></a>
+                                        [src]="usersPostsImages[buscarPosUserImagen(post.nombreUsuario.nombreUsuario)].image"
+                                        width="60px" height="60px"></a>
 
                                 <b>{{post.nombreUsuario.nombreUsuario}}</b>
                             </div>
-                            <div class="col" *ngIf="esMiPost(post.nombreUsuario.nombreUsuario)"><a
-                                    class="btn btn-primary" href="/editPost/{{post.id}}">Edit</a></div>
+                            <div class="col text-center align-middle py-2"
+                                *ngIf="esMiPost(post.nombreUsuario.nombreUsuario)"><a class="h3 "
+                                    href="/editPost/{{post.id}}"><i class="fa fa-edit"></i></a></div>
                         </div>
                         <div class="row border border-secondary py-4 px-4">
                             <h5><a href="/posts/{{post.id}}">{{post.cabecera}}</a></h5>
-                            <p>{{post.contenido}}</p><img class="px-5" src="../../assets/gatito.jpg">
+                            <p>{{post.contenido}}</p>
+                            <img class="px-5" *ngIf="buscarPosImagen(post.id)==-1"
+                                src="../../assets/image-not-found.webp">
+                            <img class="px-5" *ngIf="buscarPosImagen(post.id)!=-1"
+                                [src]="postsImages[buscarPosImagen(post.id)].image">
                             <h6 class="py-3 px-5"><a href="/comments/{{post.id}}">Comments</a></h6>
                             <div class="row" *ngIf="_authService.isAuth() && _authService.isAdmin()==false">
                                 <div class="col-9 d-flex justify-content-center"><img class="rounded-circle mx-3"
@@ -103,4 +120,23 @@
         <div class="text-center">There is no posts here</div>
     </ng-template>
 
+    <!-- ModalPostDelete -->
+    <div class="modal fade my-5" id="ModalPostDelete" tabindex="-1" aria-labelledby="modalEmail" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure to delete this post?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                    <button type="button" (click)="borrarPost(id)" data-bs-dismiss="modal"
+                        class="btn btn-success">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdoptionsComponent } from './adoptions/adoptions.component';
 import { ChatComponent } from './chat/chat.component';
 import { CommentComponent } from './comment/comment.component';
 import { ContactComponent } from './contact/contact.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'users', component: UserComponent},
   {path: 'users/:nombreUsuario', component: UserComponent},
   {path: 'animalsAdopted/:nombreUsuario', component: UserComponent},
+  {path: 'adoptions', component: AdoptionsComponent},
 
   {path: 'myProfile', component: UserComponent},
   {path: 'editProfile/:nombreUsuario', component: RegisterComponent},
@@ -37,6 +39,8 @@ const routes: Routes = [
   {path: 'myProfile/followers', component: FollowsComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'chat', component: ChatComponent},
+  {path: 'chat/:usuarioDest', component: ChatComponent},
+
 
   {path: '', component: HomeComponent},
   {path: '**', component: HomeComponent}
