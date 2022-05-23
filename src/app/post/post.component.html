@@ -1,7 +1,7 @@
 <div class="containerComponentes container px-5 py-5" infiniteScroll [infiniteScrollDistance]="3"
     (scrolled)="add2LinesPosts()">
-    <div class="spinnerAdmin d-none"><img src="./assets/loading.gif" width="120px"
-            class="position-relative start-50 top-50"></div>
+    <div class="spinnerAdmin d-none d-flex justify-content-center"><img src="./assets/loading.gif" width="120px"
+            class="position-relative "></div>
 
 
     <ng-container *ngIf=" id ; else noId">
@@ -66,13 +66,13 @@
                     style="color: aliceblue!important" href="/createPost/">Create
                     a new post</a></div>
         </div>
-        <div class="spinner d-none"><img src="./assets/loading.gif" width="120px"
+        <div class="spinner d-none d-flex justify-content-center"><img src="./assets/loading.gif" width="120px"
                 class="position-relative start-50 top-50"></div>
 
-        <ng-container *ngIf="existsPosts() ; else noPosts">
+        <ng-container *ngIf="existsPosts() || posts.length==0; else noPosts">
             <ng-container *ngIf="opcionSeleccionado != 'type'  || esAdminPosts()">
                 <div class="containerPost py-3" *ngFor="let post of postsMostrados">
-                    <ng-container *ngIf="post.nombreUsuario.tipo!='admin' || _router.url=='/adminPosts'">
+                    <ng-container *ngIf="(post.nombreUsuario.tipo!='admin' || _authService.isAdmin()) || _router.url=='/adminPosts'">
                         <div class="row py-3">
                             <div class="col"><a *ngIf="_authService.isAuth()"
                                     href="/users/{{post.nombreUsuario.nombreUsuario}}">

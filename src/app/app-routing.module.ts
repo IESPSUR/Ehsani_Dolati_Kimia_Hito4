@@ -17,6 +17,7 @@ const routes: Routes = [
   {path: 'comments/:id', component: CommentComponent},
   {path: 'users', component: UserComponent},
   {path: 'users/:nombreUsuario', component: UserComponent},
+  {path: 'findUsers', component: UserComponent},
   {path: 'animalsAdopted/:nombreUsuario', component: UserComponent},
   {path: 'adoptions', component: AdoptionsComponent},
 

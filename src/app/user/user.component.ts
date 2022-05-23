@@ -3,6 +3,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { FollowDTO } from '../DTO/FollowDTO';
+import { ImageUserPost } from '../DTO/ImagenUserPost';
+import { ImagePost } from '../DTO/ImagePost';
 import { UserDTO } from '../DTO/UserDTO';
 import { AdoptionRequestsService } from '../services/adoption-requests.service';
 import { AuthenticationService } from '../services/authentication.service';
@@ -30,9 +32,11 @@ export class UserComponent implements OnInit {
   public usuarioParaBorrar: string;
   public dltUserReason: string;
   public usuarioCorreoParaBorrar: string;
+  public imgUsusBuscar:Array<ImageUserPost>;
 
   constructor(private _postservice: PostService, private _emailService: EmailService, private _adoptionService: AdoptionRequestsService, private _sanitizer: DomSanitizer, public _imageService: ImageService, private _followService: FollowsService, private _userService: UserService, public _router: Router, private actRout: ActivatedRoute, public _authService: AuthenticationService) {
     this.nombreUsuario = this.actRout.snapshot.params['nombreUsuario'];
+    this.imgUsusBuscar=[];
   }
 
   ngOnInit(): void {
@@ -57,7 +61,9 @@ export class UserComponent implements OnInit {
       })
     } else {
       this._userService.obtenerUsuarios().subscribe(data => {
-        return this.users = data;
+         this.users = data;
+          this.getImagenesListaUsers();
+         return this.users;
       })
     }
 
@@ -83,6 +89,7 @@ export class UserComponent implements OnInit {
   public deleteAccount(nombreUsuario?: string) {
     if (nombreUsuario) {
       this._postservice.deletePostUser(nombreUsuario).subscribe();
+      this._adoptionService.borrarSolicitud(nombreUsuario).subscribe();
       this._userService.delete(nombreUsuario).subscribe(data => {
         this._emailService.createSendEmailRequestBorrarUsu({ correoDeUsu: this.usuarioCorreoParaBorrar, mensajeAdmin: this.dltUserReason, nombreUsuario: this.usuarioParaBorrar }).subscribe();
         this.users.splice(this.users.findIndex(us => us.nombreUsuario == this.usuarioParaBorrar), 1);
@@ -100,12 +107,14 @@ export class UserComponent implements OnInit {
     const reader = new FileReader();
     reader.onload = (e: any) => {
       this.imagenTemp = this._sanitizer.bypassSecurityTrustResourceUrl(e.target.result);
-      this.imagenUsu = this.imagenTemp;
+      if(this._router.url=='/findUsers' ||this._router.url=='/users' ){
+        this.imgUsusBuscar.push(new ImageUserPost(nombreUsuOIdPub||"",this.imagenTemp));
+      }else{
+        this.imagenUsu = this.imagenTemp;
+      }
     }
 
     reader.readAsDataURL(new Blob([res]));
-
-
   }
 
 
@@ -132,4 +141,15 @@ export class UserComponent implements OnInit {
     this.usuarioParaBorrar = nombreUsuario;
     this.usuarioCorreoParaBorrar = correoUsu;
   }
+
+  public buscarPosFindUser(nombreUsu:string){
+    return this.imgUsusBuscar.findIndex(i=>i.nombreUsuario==nombreUsu);
+  }
+
+  public getImagenesListaUsers(){
+    this.users.forEach(user=>{
+      this.getImagen(user.nombreUsuario);
+    })
+  }
+
 }

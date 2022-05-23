@@ -18,17 +18,26 @@ export class FollowsComponent implements OnInit {
   public follower: boolean;
   public title: string;
   public imagesUsus: Array<ImageUserPost>;
+  public errorNotFoundFollowing:string;
+  public errorNotFoundFollowers:string;
 
   constructor(private _sanitizer: DomSanitizer, private _imageService: ImageService, public _router: Router, private _followService: FollowsService, private actRout: ActivatedRoute) {
     this.nombreUsuario = this.actRout.snapshot.params['nombreUsuario'];
     this.imagesUsus=[];
+    if (this._router.url == "/users/" + this.nombreUsuario + "/followings" || this._router.url=="/myProfile/followings") {
+      this.title = "Followings";
+      this.errorNotFoundFollowing="There is no followings";
+    } else {
+      this.title = "Followers";
+      this.errorNotFoundFollowers="There is no followers";
+    }
   }
 
   ngOnInit(): void {
     this.title = "Followings";
 
     if (this.nombreUsuario) {
-      if (this._router.url == "/users/" + this.nombreUsuario + "/followings") {
+      if (this._router.url == "/users/" + this.nombreUsuario + "/followings" || this._router.url=="/myProfile/followings") {
         this.followings(this.nombreUsuario);
         this.follower = false;
         this.title = "Followings";
@@ -36,7 +45,6 @@ export class FollowsComponent implements OnInit {
         this.follower = true;
         this.followers(this.nombreUsuario);
         this.title = "Followers";
-
       }
     } else {
       if (this._router.url == "/myProfile/followers") {
@@ -60,12 +68,18 @@ export class FollowsComponent implements OnInit {
   public async followers(nombreUsuario?: string) {
     var service = this._followService.followers(nombreUsuario ? nombreUsuario : sessionStorage.getItem("nombreUsuario") || "");
     this.users = await lastValueFrom(service);
+    if(this.users.length>0){
+      this.errorNotFoundFollowers="";
+    }
     this.getImagesUsuFollows();
   }
 
   public followings(nombreUsuario?: string) {
     this._followService.followings(nombreUsuario ? nombreUsuario : sessionStorage.getItem("nombreUsuario") || "").subscribe(data => {
     this.users = data;
+    if(this.users.length>0){
+      this.errorNotFoundFollowing="";
+    }
     this.getImagesUsuFollows();
 
     })
@@ -92,6 +106,11 @@ export class FollowsComponent implements OnInit {
 
 
   public buscarImageIndice(nombreUsu:string):number{
+    if (this._router.url == "/users/" + this.nombreUsuario + "/followings") {
+      this.errorNotFoundFollowing="";
+    }else{
+      this.errorNotFoundFollowers="";
+    }
     return this.imagesUsus.findIndex(i=>i.nombreUsuario==nombreUsu);
   }
 

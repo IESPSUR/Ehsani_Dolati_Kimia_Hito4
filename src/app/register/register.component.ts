@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder,FormControl,FormGroup,ValidationErrors,ValidatorFn,Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { UserDTO } from '../DTO/UserDTO';
@@ -12,7 +12,16 @@ import { UserService } from '../services/user.service';
 })
 export class RegisterComponent implements OnInit {
 
-  public registerForm: FormGroup;
+  public registerForm: FormGroup= new FormGroup({
+      nombreUsuario: new FormControl('', [Validators.required]),
+      contrasenia: new FormControl('', [Validators.required]),
+      dni: new FormControl('', [Validators.required]),
+      nombre: new FormControl('', [Validators.required]),
+      apellido: new FormControl('', [Validators.required]),
+      correo: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+$/)]),
+      fechaNacimiento: new FormControl('', [Validators.required]),
+      file: new FormControl()
+  });
   public nombreUsuario: string;
   public title: string = "Register";
   public user: UserDTO;
@@ -28,18 +37,6 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     if (this.nombreUsuario) {
       this.procesarDatos();
-    }else{
-      this.registerForm = this.fb.group({
-        nombreUsuario: new FormControl('', [Validators.required]),
-        contrasenia: new FormControl('', [Validators.required]),
-        dni: new FormControl('', [Validators.required]),
-        nombre: new FormControl('', [Validators.required]),
-        apellido: new FormControl('', [Validators.required]),
-        correo: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+$/)]),
-        fechaNacimiento: new FormControl('', [Validators.required]),
-        file: new FormControl()
-  
-      });
     }
   }
 
@@ -74,7 +71,7 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.fb.group({
       nombreUsuario: new FormControl(this.user.nombreUsuario, [Validators.required]),
       contrasenia: new FormControl(this.user.contrasenia, [Validators.required]),
-      dni: new FormControl(this.user.dni, [Validators.required]),
+      dni: new FormControl(this.user.dni, [Validators.required,Validators.pattern(/^[0-9]{7}/)]),
       nombre: new FormControl(this.user.nombre, [Validators.required]),
       apellido: new FormControl(this.user.apellido, [Validators.required]),
       correo: new FormControl(this.user.correo, [Validators.required, Validators.pattern(/^.+@[a-zA-Z0-9]+\.[a-zA-Z]+$/)]),
@@ -83,6 +80,8 @@ export class RegisterComponent implements OnInit {
 
     });
   }
+
+  
 
 
 }

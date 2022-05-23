@@ -12,6 +12,7 @@ export class AdoptionRequestsService {
   protected endpointResponderSolicitud:string = environment.url_back + '/responderSolicitud/';
   protected endpointGetAdoptedAnimals:string = environment.url_back + '/listarAnimalesAceptados/';
   protected endpointGetAllAdoptedAnimals:string = environment.url_back + '/listarSolicitudes/';
+  protected endpointDeleteAdoptedAnimals:string = environment.url_back + '/borrarSolicitudAnimalUsu/';
 
   constructor(private http:HttpClient) { }
 
@@ -29,5 +30,9 @@ export class AdoptionRequestsService {
 
   getAllAdoptedAnimals(): Observable<any>{
     return this.http.get(this.endpointGetAllAdoptedAnimals );
+  }
+
+  borrarSolicitud(nombreUsu:string): Observable<any>{
+    return this.http.delete(this.endpointDeleteAdoptedAnimals + nombreUsu  );
   }
 }

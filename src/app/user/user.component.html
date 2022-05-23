@@ -1,3 +1,5 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
 <ng-container *ngIf="(adoptedAnimals==null ||adoptedAnimals.length==0) && _router.url.startsWith('/animalsAdopted/') ; else animals">
   <div class="container text-center py-5">
     <h3 *ngIf="esMiPerfil(nombreUsuario)">there is no adopted animals yet. If you want to adopt an animal, just go to others users posts!</h3>
@@ -85,23 +87,23 @@
           </div>
           <div class="col-md-2">
             <a *ngIf="esMiPerfil(user.nombreUsuario)" class="profile-edit-btn" href="editProfile/{{user.nombreUsuario}}"
-              [routerLinkActive]="['activado']"> Edit Profile </a>
-            <a *ngIf="esMiPerfil(user.nombreUsuario)==false && _authService.isAuth() && !_authService.isAdmin()"
+              [routerLinkActive]="['activado']"> Edit Profile </a><br>
+              <a *ngIf="esMiPerfil(user.nombreUsuario) && !_authService.isAdmin()" class="profile-find-btn" href="/findUsers/"
+              [routerLinkActive]="['activado']"> Find Friends </a>
+            <a *ngIf="esMiPerfil(user.nombreUsuario)==false && _authService.isAuth() && !_authService.isAdmin() && user.tipo!='admin'"
               class="btn btn-success" (click)="follow(user.nombreUsuario)"> {{estadoSeguimiento}}</a>
-            <a *ngIf="esMiPerfil(user.nombreUsuario)==false && _authService.isAuth() && !_authService.isAdmin()"
+            <a *ngIf="esMiPerfil(user.nombreUsuario)==false && _authService.isAuth() && !_authService.isAdmin()&& user.tipo!='admin'"
               class="btn btn-primary my-2" href="/chat/{{user.nombreUsuario}}">To Message</a>
           </div>
         </div>
         <div class="row">
           <div class="col-md-4">
-            <div *ngIf="!_authService.isAdmin()" class="profile-work">
+            <div *ngIf="user.tipo!='admin' " class="profile-work">
               <p>LINKS</p>
               <a [routerLink]="['followers']" [routerLinkActive]="['activado']"> Followers </a><br>
               <a [routerLink]="['followings']" [routerLinkActive]="['activado']"> Followings </a><br>
               <a *ngIf="esMiPerfil(user.nombreUsuario)" class="text-danger" data-bs-toggle="modal"
                 data-bs-target="#modalDeleteAccount"> Delete Account</a>
-
-
             </div>
           </div>
           <div class="col-md-8">
@@ -154,12 +156,12 @@
                   <div class="col-md-6">
                     <p>{{user.fechaNacimiento}}</p>
                   </div>
-                  <div class="col-md-6" *ngIf="!_authService.isAdmin() && (esMiPerfil(nombreUsuario) || _router.url=='/myProfile')"> If you want to see your previous animals that
+                  <div class="col-md-6" *ngIf="!_authService.isAdmin() && _router.url=='/myProfile'"> If you want to see your previous animals that
                     you have given them to adoption,
                     click
                     <a href="animalsAdopted/{{user.nombreUsuario}}">here.</a>
                   </div>
-                  <div class="col-md-6" *ngIf="!_authService.isAdmin() &&  _router.url!='/myProfile'"> If you want to see this users previous animals that
+                  <div class="col-md-6" *ngIf="!_authService.isAdmin() &&  _router.url!='/myProfile' && user.tipo!='admin'"> If you want to see this users previous animals that
                     he/she has given them to adoption,
                     click
                     <a href="animalsAdopted/{{user.nombreUsuario}}">here.</a>
@@ -192,26 +194,28 @@
       <table class="table table-striped  ">
         <thead class="thead-dark">
           <tr>
+            <th>Imagen</th>
             <th>Username</th>
-            <th>DNI</th>
+            <th *ngIf="_router.url!='/findUsers'">DNI</th>
             <th>Name</th>
             <th>LastName</th>
-            <th>Birth Date</th>
-            <th>Email</th>
-            <th>Delete</th>
+            <th *ngIf="_router.url!='/findUsers'">Birth Date</th>
+            <th *ngIf="_router.url!='/findUsers'">Email</th>
+            <th *ngIf="_router.url!='/findUsers'">Delete</th>
 
           </tr>
         </thead>
         <tbody *ngFor="let user of users">
           <tr>
+            <td><a href="/users/{{user.nombreUsuario}}"><img [src]="imgUsusBuscar[buscarPosFindUser(user.nombreUsuario)].image" class="rounded-circle mx-3" width="60px" height="60px"></a></td>
             <td>{{user.nombreUsuario}}</td>
-            <td>{{user.dni}}</td>
+            <td *ngIf="_router.url!='/findUsers'">{{user.dni}}</td>
             <td>{{user.nombre}}</td>
             <td>{{user.apellido}}</td>
-            <td>{{user.fechaNacimiento}}</td>
-            <td>{{user.correo}}</td>
-            <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDeleteAccount"
-                (click)="guardarUsuario(user.nombreUsuario,user.correo)">Delete</button></td>
+            <td *ngIf="_router.url!='/findUsers'">{{user.fechaNacimiento}}</td>
+            <td *ngIf="_router.url!='/findUsers'">{{user.correo}}</td>
+            <td *ngIf="_router.url!='/findUsers'"><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDeleteAccount"
+                (click)="guardarUsuario(user.nombreUsuario,user.correo)"><i class="fa fa-trash"></i></button></td>
 
           </tr>
         </tbody>

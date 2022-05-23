@@ -56,7 +56,7 @@
     <div  class="collapse navbar-collapse" id="navbarNav" *ngIf="_authService.isAdmin() && _authService.isAuth()">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link " [routerLink]="['home']" [routerLinkActive]="['activado']"><i class="fa fa-home "></i></a>
+          <a class="nav-link " [routerLink]="['home']" [routerLinkActive]="['activado']">Home</a>
         </li>
         <li class="nav-item " *ngIf="_authService.isAuth()">
           <a class="nav-link" [routerLink]="['myProfile']" [routerLinkActive]="['activado']">My Profile</a>

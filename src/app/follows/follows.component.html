@@ -1,9 +1,13 @@
 <div class="container px-5  py-5">
 
   <h1 class="text-center py-4">{{title}}</h1>
+  
+  <div class="text-center"><p>{{errorNotFoundFollowing}}</p>
+    <p>{{errorNotFoundFollowers}}</p></div>
+  
 
   <div class="px-4" *ngFor="let user of users; let i=index">
-    
+
     <div class="row d-flex align-items-center my-4" *ngIf="follower==false"><div class="col-3"><a href="/users/{{user}}"><img class="rounded-circle mx-3"
       [src]="imagesUsus[buscarImageIndice(user)].image" width="60px"
       height="60px"></a></div><div class="col"> {{user}} </div> <div class="col"><button *ngIf="esMiPerfil(nombreUsuario)|| _router.url.startsWith('/myProfile')" class="btn btn-danger" (click)="unFollow(user)">Unfollow</button></div></div>

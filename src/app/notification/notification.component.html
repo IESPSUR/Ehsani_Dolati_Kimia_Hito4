@@ -6,6 +6,9 @@
         <option value="1">Follows</option>
         <option value="2">Adoption Requests</option>
     </select>
+    <div class="text-center"><p>{{errorNotFoundFollows}}</p>
+      <p>{{errorNotFoundAdoptions}}</p></div>
+
     <div *ngIf="!notifications">There is no notificatione yet</div>
     <div class="py-5 px-5" *ngFor="let notification of notifications">
         <div class="row" *ngIf="opcionSeleccionado==1">
@@ -32,7 +35,7 @@
 
     </div>
     <!-- ModalEmail -->
-<div class="modal fade" id="modalEmail" tabindex="-1" aria-labelledby="modalEmail" aria-hidden="true">
+<div class="modal fade my-5" id="modalEmail" tabindex="-1" aria-labelledby="modalEmail" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">

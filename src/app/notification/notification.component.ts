@@ -22,6 +22,8 @@ export class NotificationComponent implements OnInit {
   public post: PostDTO;
   public notifications: Array<any>;
   public imagesNotfs: Array<ImageUserPost>;
+  public errorNotFoundFollows:string;
+  public errorNotFoundAdoptions:string;
 
   constructor(private _sanitizer: DomSanitizer, private _imageService: ImageService, private _emailService: EmailService, private _postService: PostService, private _adoptReqService: AdoptionRequestsService, private _followService: FollowsService) {
     this.notifications = [];
@@ -46,16 +48,31 @@ export class NotificationComponent implements OnInit {
   }
 
   public obtenerLista() {
-    this.imagesNotfs=[];
-    this.notifications=[];
     if (this.opcionSeleccionado == 1) {
-      this._followService.followers(sessionStorage.getItem("nombreUsuario") || "").subscribe(data => {
+      this.errorNotFoundFollows = "There is no follow requests";
+      this.errorNotFoundAdoptions="";
+    } else {
+      this.errorNotFoundAdoptions = "There is no adoption requests";
+      this.errorNotFoundFollows="";
+    }
+    this.imagesNotfs = [];
+    this.notifications = [];
+    if (this.opcionSeleccionado == 1) {
+      this._followService.followersNotification(sessionStorage.getItem("nombreUsuario") || "").subscribe(data => {
         this.notifications = data;
+        if(this.notifications.length>0){
+          this.errorNotFoundFollows = "";
+          this.errorNotFoundAdoptions="";
+        }
         this.getImagesUsuNotf();
       })
     } else {
       this._adoptReqService.getSolicitudesDeUnUsuario().subscribe(data => {
         this.notifications = data;
+        if(this.notifications.length>0){
+          this.errorNotFoundFollows = "";
+          this.errorNotFoundAdoptions="";
+        }
         this.getImagesUsuNotf();
 
       })
@@ -76,9 +93,9 @@ export class NotificationComponent implements OnInit {
 
   getImagesUsuNotf() {
     this.notifications.forEach(notf => {
-      if(!notf.nombreUsuario){
+      if (!notf.nombreUsuario) {
         this.getImagen(notf.toString(), true);
-      }else{
+      } else {
         this.getImagen(notf.nombreUsuario.nombreUsuario, true);
       }
     });
@@ -99,6 +116,11 @@ export class NotificationComponent implements OnInit {
   }
 
   public buscarImageIndice(nombreUsu: string): number {
+    if(this.opcionSeleccionado==1){
+      this.errorNotFoundFollows="";
+    }else{
+      this.errorNotFoundAdoptions="";
+    }
     return this.imagesNotfs.findIndex(i => i.nombreUsuario == nombreUsu);
 
   }
