@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,7 +25,8 @@ public class SolicitudAnimalController {
 	@GetMapping("/listarSolicitudes")
 	@ResponseBody
 	public List<SolicitudAnimalModel> listarSolicitudes() {
-		return requestDao.getAllForAdmin();
+		List<SolicitudAnimalModel> lista=  requestDao.getAllForAdmin();
+		return lista;
 	}
 
 	@GetMapping("/listarSolicitudesDeUnUsuario/{nombreUsuario}")
@@ -37,7 +39,7 @@ public class SolicitudAnimalController {
 	}
 	
 
-	@PutMapping("/borrarSolicitudAnimal/{nombreUsuario}/{animalesDNI}/{fecha}")
+	@DeleteMapping("/borrarSolicitudAnimal/{nombreUsuario}/{animalesDNI}/{fecha}")
 	@ResponseBody
 	public void borrarSolicitud(@PathVariable String nombreUsuario , @PathVariable String animalesDNI, @PathVariable String fecha ) throws NotFoundException {
 		if (nombreUsuario == "" || animalesDNI == "" || fecha == "" ) {
@@ -46,6 +48,14 @@ public class SolicitudAnimalController {
 		requestDao.delete(nombreUsuario,animalesDNI,fecha);
 	}
 
+	@DeleteMapping("/borrarSolicitudAnimalUsu/{nombreUsuario}")
+	@ResponseBody
+	public void borrarSolicitudAnimalUsu(@PathVariable String nombreUsuario) throws NotFoundException {
+		if (nombreUsuario == ""  ) {
+			throw new NotFoundException();
+		}
+		requestDao.deleteByUsu(nombreUsuario);
+	}
 	
 	@PostMapping("/crearSolicitud")
 	@ResponseBody

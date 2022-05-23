@@ -43,7 +43,7 @@ public class SolicitudAnimalDAO {
 	
 	@SuppressWarnings("unchecked")
 	public List<SolicitudAnimalModel> getAllForAdmin() {
-		return entityManager.createQuery(" from solicitudAnimal ").getResultList();
+		return entityManager.createQuery(" from solicitudAnimal where deleted ='0'").getResultList();
 	}
 
 	@SuppressWarnings("unchecked")
@@ -77,6 +77,15 @@ public class SolicitudAnimalDAO {
 							+ "' and animalesDNI= '" + animalesDNI + "' and fecha= '" + fecha + "'")
 					.executeUpdate();
 		}
+
+	}
+	
+	public void deleteByUsu(String nombreUsuario) {
+			entityManager.createNativeQuery(
+					"UPDATE solicitudAnimal SET deleted=true WHERE nombreUsuario = '" + nombreUsuario
+							+ "'")
+					.executeUpdate();
+		
 
 	}
 

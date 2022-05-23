@@ -1,0 +1,34 @@
+spring.main.allow-circular-references= true
+
+db.driver: com.mysql.cj.jdbc.Driver
+#db.url: jdbc:mysql://192.168.1.2/AdopcionAnimales
+#db.username: pym
+#db.password: pym
+
+db.url: jdbc:mysql://localhost:3306/AdoptAnimal
+db.username: root
+db.password: root
+
+# Hibernate
+hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+hibernate.show_sql: true
+hibernate.hbm2ddl.auto: update
+entitymanager.packagesToScan: com.animals
+
+#Sesion
+#spring.session.store-type=jdbc
+#spring.session.jdbc.initialize-schema=always
+#pring.session.timeout=600
+#spring.h2.console.enabled=true
+
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+#(above can be used for gmail)
+spring.mail.username=kimia.ehsani.dolati.al@iespoligonosur.org
+spring.mail.password=kimiay647082
+spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.smtp.starttls.required=true
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.connectiontimeout=5000
+spring.mail.properties.mail.smtp.timeout=5000
+spring.mail.properties.mail.smtp.writetimeout=5000

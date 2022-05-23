@@ -42,6 +42,15 @@ public class SeguimientoController {
 		}
 		return followDao.getFollowers(nombreUsuario);
 	}
+	
+	@GetMapping("/listarFollowersNotification/{nombreUsuario}")
+	@ResponseBody
+	public List<SeguimientoModel> listarFollowersNotification(@PathVariable String nombreUsuario) throws NotFoundException {
+		if (nombreUsuario == "") {
+			throw new NotFoundException();
+		}
+		return followDao.getFollowersNotification(nombreUsuario);
+	}
 
 	@DeleteMapping("/borrarSeguimiento/{nombreUsuario1}/{nombreUsuario2}")
 	@ResponseBody

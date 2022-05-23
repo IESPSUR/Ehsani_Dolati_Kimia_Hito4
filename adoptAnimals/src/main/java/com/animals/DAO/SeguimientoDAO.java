@@ -37,6 +37,11 @@ public class SeguimientoDAO {
 	       return entityManager.createNativeQuery("select s.nombreUsuario1 from seguimiento s where s.nombreUsuario2 = '" + nombreUsuario2 + "'").getResultList();
 	    }
 	   	
+	   	@SuppressWarnings("unchecked")
+		public List<SeguimientoModel> getFollowersNotification(String nombreUsuario2 ) {
+	       return entityManager.createNativeQuery("select s.nombreUsuario1 from seguimiento s where nombreUsuario2='"+nombreUsuario2+"' and ( nombreUsuario1 not in (select nombreUsuario2  from seguimiento where nombreUsuario1='"+nombreUsuario2+"' ));").getResultList();
+	    }
+	   	
 	    @SuppressWarnings("unchecked")
 		public List<SeguimientoModel> getFollow(String nombreUsuario1 , String nombreUsuario2 ) {
 	        return entityManager.createQuery(" from seguimiento where nombreUsuario1 = '"+nombreUsuario1 +"' and nombreUsuario2 = '" + nombreUsuario2+"'").getResultList();
